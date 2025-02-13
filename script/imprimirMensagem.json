@@ -1,0 +1,12 @@
+{
+	"1": {
+		"descricao": "Uma caixa de madeira antiga.",
+		"peso": 5.0,
+		"cor": "Marrom"
+	},
+	"2": {
+		"descricao": "Uma caixa metálica pesada.",
+		"peso": 10.0,
+		"cor": "Cinza"
+	}
+}

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://be2h0jnqyu87j"]
+
+[ext_resource type="Script" path="res://script/caixas/caixa_5.gd" id="1_wa114"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kggc0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vmgap"]
+
+[node name="caixa5" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_kggc0")
+script = ExtResource("1_wa114")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_vmgap")

@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://fxwwn1jq581p"]
+
+[ext_resource type="Script" path="res://script/joystick.gd" id="1_jm4uk"]
+[ext_resource type="Texture2D" uid="uid://qqshg46u0svb" path="res://assets/JoystickSplitted.png" id="3_wi0w6"]
+[ext_resource type="Texture2D" uid="uid://di2xuo80uxrij" path="res://icon.svg" id="4_agu6q"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6muyt"]
+load_path = "res://.godot/imported/SmalHandle.png-026e81f2a8a56563d88c4e23e307b902.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hyqyq"]
+radius = 60.0
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="joystick" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(116, 431)
+texture_normal = SubResource("CompressedTexture2D_6muyt")
+shape = SubResource("CircleShape2D_hyqyq")
+action = "validarJoystick"
+script = ExtResource("1_jm4uk")
+
+[node name="knod" type="Sprite2D" parent="CanvasLayer/joystick"]
+position = Vector2(60, 60)
+texture = ExtResource("3_wi0w6")
+
+[node name="panelComando" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(576, 70)
+scale = Vector2(5.53516, 1.03906)
+texture = ExtResource("4_agu6q")
+
+[node name="infor" type="Button" parent="CanvasLayer"]
+offset_left = 1040.0
+offset_top = 344.0
+offset_right = 1149.0
+offset_bottom = 456.0
+scale = Vector2(0.625, 0.5625)
+
+[node name="largar" type="Button" parent="CanvasLayer"]
+offset_left = 951.0
+offset_top = 461.0
+offset_right = 1067.0
+offset_bottom = 579.0
+scale = Vector2(0.65625, 0.601563)
+disabled = true
+icon = ExtResource("4_agu6q")
+
+[node name="descarte" type="Button" parent="CanvasLayer"]
+offset_left = 1029.0
+offset_top = 238.0
+offset_right = 1164.0
+offset_bottom = 348.0
+scale = Vector2(0.585938, 0.578125)
