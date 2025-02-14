@@ -1,9 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://b0nmucgpfoa4g"]
+[gd_scene load_steps=34 format=3 uid="uid://b0nmucgpfoa4g"]
 
 [ext_resource type="PackedScene" uid="uid://fxwwn1jq581p" path="res://scene/control.tscn" id="1_kec7e"]
 [ext_resource type="PackedScene" uid="uid://blmhgkkujxiu0" path="res://scene/player.tscn" id="2_1i48k"]
 [ext_resource type="Texture2D" uid="uid://di2xuo80uxrij" path="res://icon.svg" id="3_2e8bc"]
 [ext_resource type="Script" path="res://script/areaAdicionar.gd" id="5_ls26k"]
+[ext_resource type="Script" path="res://script/area_caixas.gd" id="5_t3hmd"]
 [ext_resource type="PackedScene" uid="uid://dfcvv87lu1drp" path="res://scene/caixas/caixas_1.tscn" id="5_uev5i"]
 [ext_resource type="PackedScene" uid="uid://qg5auvxr5pt0" path="res://scene/caixas/caixa_2.tscn" id="6_rvsuo"]
 [ext_resource type="PackedScene" uid="uid://s81rie3pjfkb" path="res://scene/caixas/caixa_3.tscn" id="7_omsnu"]
@@ -179,13 +180,17 @@ mesh = SubResource("BoxMesh_pt5ei")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D/MeshInstance3D/StaticBody3D"]
 shape = SubResource("BoxShape3D_6kfn4")
 
-[node name="areaCaixas" type="Node3D" parent="."]
+[node name="areaCaixas" type="Node3D" parent="." node_paths=PackedStringArray("parent_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0149, 3.40194)
+script = ExtResource("5_t3hmd")
+parent_node = NodePath("caixa1")
 
 [node name="caixa1" type="Node3D" parent="areaCaixas"]
 
-[node name="caixas1" parent="areaCaixas/caixa1" instance=ExtResource("5_uev5i")]
+[node name="caixa1" parent="areaCaixas/caixa1" node_paths=PackedStringArray("hand", "parent_node") instance=ExtResource("5_uev5i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64978, 0, 0)
+hand = NodePath("../../../player/Collision/slot")
+parent_node = NodePath("../../../player/Collision/slot")
 
 [node name="caixa2" type="Node3D" parent="areaCaixas"]
 
