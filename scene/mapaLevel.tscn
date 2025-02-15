@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://cqiusknjrctgn"]
+
+[ext_resource type="Texture2D" uid="uid://di2xuo80uxrij" path="res://icon.svg" id="1_bcdaa"]
+[ext_resource type="Script" path="res://script/scroll_container.gd" id="1_dlb16"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l2kwu"]
+
+[sub_resource type="Theme" id="Theme_oxv7b"]
+HScrollBar/styles/scroll = SubResource("StyleBoxEmpty_l2kwu")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4j8ot"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_48vug"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mqvbj"]
+size = Vector2(1152, 300)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -8.0
+offset_bottom = -8.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 165.0
+offset_right = 1152.0
+offset_bottom = 512.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_oxv7b")
+vertical_scroll_mode = 0
+script = ExtResource("1_dlb16")
+
+[node name="ItemList" type="ItemList" parent="ScrollContainer"]
+custom_minimum_size = Vector2(2300, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/v_separation = 78
+theme_override_constants/h_separation = 120
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4j8ot")
+theme_override_styles/hovered = SubResource("StyleBoxEmpty_48vug")
+item_count = 6
+max_columns = 10
+icon_scale = 2.0
+item_0/icon = ExtResource("1_bcdaa")
+item_1/icon = ExtResource("1_bcdaa")
+item_2/icon = ExtResource("1_bcdaa")
+item_3/icon = ExtResource("1_bcdaa")
+item_4/icon = ExtResource("1_bcdaa")
+item_5/icon = ExtResource("1_bcdaa")
+
+[node name="touchArea" type="TouchScreenButton" parent="."]
+position = Vector2(574, 338)
+shape = SubResource("RectangleShape2D_mqvbj")
+
+[connection signal="released" from="touchArea" to="ScrollContainer" method="_on_touch_area_released"]
