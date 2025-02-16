@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://qg5auvxr5pt0"]
 
-[ext_resource type="Script" path="res://script/caixas/caixa_2.gd" id="1_yev0e"]
+[ext_resource type="Script" path="res://script/caixas/caixa2/caixa_2.gd" id="1_yev0e"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_w2lw8"]
 

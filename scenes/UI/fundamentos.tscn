@@ -1,0 +1,91 @@
+[gd_scene load_steps=12 format=3 uid="uid://cqiusknjrctgn"]
+
+[ext_resource type="Script" path="res://script/ScrollFundamentos.gd" id="1_112sm"]
+[ext_resource type="Texture2D" uid="uid://di2xuo80uxrij" path="res://assets/2D/icon.svg" id="2_nj1uh"]
+[ext_resource type="PackedScene" uid="uid://bw72m2k38yots" path="res://scenes/UI/variacoes.tscn" id="2_s7may"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l2kwu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5tj1r"]
+
+[sub_resource type="Theme" id="Theme_oxv7b"]
+HScrollBar/styles/scroll = SubResource("StyleBoxEmpty_l2kwu")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_5tj1r")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4j8ot"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7cr0u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_48vug"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mqvbj"]
+size = Vector2(1152, 300)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ngtr2"]
+
+[node name="Fundamentos" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -8.0
+offset_bottom = -8.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScrollFun" type="ScrollContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -167.0
+offset_right = 576.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_oxv7b")
+vertical_scroll_mode = 0
+script = ExtResource("1_112sm")
+variacoesScene = ExtResource("2_s7may")
+
+[node name="Listfun" type="ItemList" parent="CanvasLayer/ScrollFun"]
+custom_minimum_size = Vector2(2300, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/v_separation = 78
+theme_override_constants/h_separation = 120
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4j8ot")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7cr0u")
+theme_override_styles/hovered = SubResource("StyleBoxEmpty_48vug")
+item_count = 6
+max_columns = 10
+icon_scale = 2.0
+item_0/icon = ExtResource("2_nj1uh")
+item_1/icon = ExtResource("2_nj1uh")
+item_2/icon = ExtResource("2_nj1uh")
+item_3/icon = ExtResource("2_nj1uh")
+item_4/icon = ExtResource("2_nj1uh")
+item_5/icon = ExtResource("2_nj1uh")
+
+[node name="TouchScrollFun" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(574, 330)
+shape = SubResource("RectangleShape2D_mqvbj")
+
+[node name="TextFun" type="TextEdit" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -259.0
+offset_top = 60.0
+offset_right = 288.0
+offset_bottom = 103.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ngtr2")
+text = "Escolha um nível: toque duas vezes para selecionar..."
+
+[connection signal="item_activated" from="CanvasLayer/ScrollFun/Listfun" to="CanvasLayer/ScrollFun" method="_on_item_list_item_activated"]
+[connection signal="released" from="CanvasLayer/TouchScrollFun" to="CanvasLayer/ScrollFun" method="_on_touch_area_released"]

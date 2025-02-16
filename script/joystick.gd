@@ -8,6 +8,11 @@ var touch_index: int = -1  # Índice do toque que controla o joystick
 
 func _ready():
 	set_process(false)
+	
+func _process(_delta):
+	if touch_index != -1:  # Só processa se houver um toque válido
+		knod.global_position = get_global_mouse_position()
+		knod.position = stick_center + (knod.position - stick_center).limit_length(max_distance)
 
 func _input(event):
 	if event is InputEventScreenTouch:
@@ -19,11 +24,6 @@ func _input(event):
 			touch_index = -1
 			set_process(false)
 			knod.position = stick_center
-
-func _process(_delta):
-	if touch_index != -1:  # Só processa se houver um toque válido
-		knod.global_position = get_global_mouse_position()
-		knod.position = stick_center + (knod.position - stick_center).limit_length(max_distance)
 
 func get_joystick_dir() -> Vector2:
 	var dir = knod.position - stick_center

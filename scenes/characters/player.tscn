@@ -8,20 +8,20 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_lhee1"]
 
-[node name="player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_us2vt")
 
-[node name="Collision" type="CollisionShape3D" parent="."]
+[node name="CollisionPlayer" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_02rl7")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Collision"]
+[node name="MeshPlayer" type="MeshInstance3D" parent="CollisionPlayer"]
 mesh = SubResource("BoxMesh_fr6lq")
 skeleton = NodePath("../..")
 
-[node name="slot" type="Node3D" parent="Collision"]
+[node name="SlotPlayer" type="Node3D" parent="CollisionPlayer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0442169, 0.504856, 1)
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="AreaPlayer" type="Area3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionAreaPlayer" type="CollisionShape3D" parent="AreaPlayer"]
 shape = SubResource("SphereShape3D_lhee1")

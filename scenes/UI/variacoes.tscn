@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://bw72m2k38yots"]
+
+[ext_resource type="Script" path="res://script/variacoes/scrollVariacoes.gd" id="1_n2r6t"]
+[ext_resource type="PackedScene" uid="uid://b0nmucgpfoa4g" path="res://main.tscn" id="2_qe4mx"]
+[ext_resource type="Script" path="res://script/variacoes/listVarLeitura.gd" id="3_dilnl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vpnv8"]
+
+[sub_resource type="Theme" id="Theme_ad4ga"]
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_vpnv8")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pv08o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kp28n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iv60j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecift"]
+size = Vector2(1152, 400)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_437mk"]
+
+[node name="Variacoes" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScrollVar" type="ScrollContainer" parent="CanvasLayer"]
+offset_top = 148.0
+offset_right = 1152.0
+offset_bottom = 495.0
+theme = SubResource("Theme_ad4ga")
+script = ExtResource("1_n2r6t")
+mainScene = ExtResource("2_qe4mx")
+
+[node name="ListVar" type="ItemList" parent="CanvasLayer/ScrollVar"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_selected_color = Color(0, 0.807843, 0.25098, 1)
+theme_override_colors/font_color = Color(0, 0.80898, 0.250744, 1)
+theme_override_colors/font_hovered_color = Color(0, 0.807843, 0.25098, 1)
+theme_override_constants/v_separation = 55
+theme_override_constants/h_separation = 50
+theme_override_font_sizes/font_size = 70
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pv08o")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kp28n")
+theme_override_styles/selected_focus = SubResource("StyleBoxEmpty_iv60j")
+auto_height = true
+script = ExtResource("3_dilnl")
+
+[node name="TouchScrollVar" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(576, 336)
+shape = SubResource("RectangleShape2D_ecift")
+
+[node name="TextVar" type="TextEdit" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -269.0
+offset_top = 42.0
+offset_right = 271.0
+offset_bottom = 81.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxEmpty_437mk")
+text = "Escolha um nível: toque duas vezes para selecionar..."
+
+[connection signal="item_activated" from="CanvasLayer/ScrollVar/ListVar" to="CanvasLayer/ScrollVar" method="_on_list_var_item_activated"]
+[connection signal="released" from="CanvasLayer/TouchScrollVar" to="CanvasLayer/ScrollVar" method="_on_touch_scroll_var_released"]

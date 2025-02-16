@@ -1,17 +1,14 @@
 extends CharacterBody3D
 
-@export var SPEED = 4
-const JUMP_VELOCITY = 4.5
+@export_category("Movimentação")
+@export var speed = 4
+@export var joystick:TouchScreenButton #Adiciona o joystick no nó menu
 
+#Aplica a gravidade ao player
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-@onready var joystick: TouchScreenButton = $"../Control/CanvasLayer/joystick"
-
-
-# Adiciona uma variável para controlar se o jogador já pulou.
-var has_jumped = false
-
-@onready var player: CollisionShape3D = $Collision
+#nó para girar o player conforme a direção dado pelo joystick
+@onready var player: CharacterBody3D = $"."
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -23,8 +20,6 @@ func _physics_process(delta):
 	if direction:
 		# Gira o player na direção de movimento.
 		player.look_at(player.global_transform.origin - direction, Vector3.UP)
-
-	velocity.x = direction.x * SPEED
-	velocity.z = direction.z * SPEED
-
+	velocity.x = direction.x * speed
+	velocity.z = direction.z * speed
 	move_and_slide()
