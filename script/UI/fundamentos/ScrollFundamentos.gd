@@ -7,7 +7,7 @@ extends ScrollContainer
 @onready var touch_scroll_fun: TouchScreenButton = $"../TouchScrollFun"
 
 #Limites do scroll na horizontal
-const LIMITMAXSCROLL:int = 1148
+const LIMITMAXSCROLL:int = 3500
 const LIMITMINSCROLL:int = 0
 
 var validacaoToque:bool = false

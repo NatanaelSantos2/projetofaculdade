@@ -5,7 +5,7 @@ extends ItemList
 var item_ids = {}
 var indexx = str(Global.contCaixa)
 func _ready() -> void:
-	var dados = carregar_json("res://script/printGeral.json")
+	var dados = carregar_json("res://script/PythonGeral.json")
 	if dados:
 		var keyss = dados[indexx]
 		for id in keyss.keys():

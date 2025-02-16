@@ -1,8 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://cqiusknjrctgn"]
+[gd_scene load_steps=21 format=3 uid="uid://cqiusknjrctgn"]
 
-[ext_resource type="Script" path="res://script/ScrollFundamentos.gd" id="1_112sm"]
-[ext_resource type="Texture2D" uid="uid://di2xuo80uxrij" path="res://assets/2D/icon.svg" id="2_nj1uh"]
+[ext_resource type="Script" path="res://script/UI/fundamentos/ScrollFundamentos.gd" id="1_112sm"]
 [ext_resource type="PackedScene" uid="uid://bw72m2k38yots" path="res://scenes/UI/variacoes.tscn" id="2_s7may"]
+[ext_resource type="Texture2D" uid="uid://dorwfm48g3rhx" path="res://assets/2D/UI/fundamentos/print.png" id="3_vr0lo"]
+[ext_resource type="Texture2D" uid="uid://b23j1w36fht25" path="res://assets/2D/UI/fundamentos/variaveis.png" id="4_uu4yi"]
+[ext_resource type="Texture2D" uid="uid://qfyh4bh77xtn" path="res://assets/2D/UI/fundamentos/Estrutruas Condicionais.png" id="5_kfba0"]
+[ext_resource type="Texture2D" uid="uid://b2rd2084kdfmq" path="res://assets/2D/UI/fundamentos/LacoRepetfor.png" id="6_of7ml"]
+[ext_resource type="Texture2D" uid="uid://c38thbjs0p875" path="res://assets/2D/UI/fundamentos/LacoRepetwhile.png" id="7_s14sn"]
+[ext_resource type="Texture2D" uid="uid://cab2ufo78nlt2" path="res://assets/2D/UI/fundamentos/funcoes.png" id="8_2ckb5"]
+[ext_resource type="Texture2D" uid="uid://de34mg3oq2fdb" path="res://assets/2D/UI/fundamentos/lista.png" id="9_hur1s"]
+[ext_resource type="Texture2D" uid="uid://d1fkr7pw022er" path="res://assets/2D/UI/fundamentos/dicionario.png" id="10_nvh10"]
+[ext_resource type="Texture2D" uid="uid://ddobs30rvu82t" path="res://assets/2D/UI/fundamentos/manipulaArquivos.png" id="11_8iods"]
+[ext_resource type="Texture2D" uid="uid://di3s3ikehuatv" path="res://assets/2D/UI/fundamentos/poo.png" id="12_mclli"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l2kwu"]
 
@@ -49,7 +58,7 @@ script = ExtResource("1_112sm")
 variacoesScene = ExtResource("2_s7may")
 
 [node name="Listfun" type="ItemList" parent="CanvasLayer/ScrollFun"]
-custom_minimum_size = Vector2(2300, 0)
+custom_minimum_size = Vector2(3500, 0)
 layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
@@ -59,15 +68,19 @@ theme_override_constants/h_separation = 120
 theme_override_styles/focus = SubResource("StyleBoxEmpty_4j8ot")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_7cr0u")
 theme_override_styles/hovered = SubResource("StyleBoxEmpty_48vug")
-item_count = 6
+item_count = 10
 max_columns = 10
 icon_scale = 2.0
-item_0/icon = ExtResource("2_nj1uh")
-item_1/icon = ExtResource("2_nj1uh")
-item_2/icon = ExtResource("2_nj1uh")
-item_3/icon = ExtResource("2_nj1uh")
-item_4/icon = ExtResource("2_nj1uh")
-item_5/icon = ExtResource("2_nj1uh")
+item_0/icon = ExtResource("3_vr0lo")
+item_1/icon = ExtResource("4_uu4yi")
+item_2/icon = ExtResource("5_kfba0")
+item_3/icon = ExtResource("6_of7ml")
+item_4/icon = ExtResource("7_s14sn")
+item_5/icon = ExtResource("8_2ckb5")
+item_6/icon = ExtResource("9_hur1s")
+item_7/icon = ExtResource("10_nvh10")
+item_8/icon = ExtResource("11_8iods")
+item_9/icon = ExtResource("12_mclli")
 
 [node name="TouchScrollFun" type="TouchScreenButton" parent="CanvasLayer"]
 position = Vector2(574, 330)

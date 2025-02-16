@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qqshg46u0svb"
-path="res://.godot/imported/JoystickSplitted.png-c7d9b868fb515a0772b6a04a6c90999e.ctex"
+uid="uid://d1fkr7pw022er"
+path="res://.godot/imported/dicionario.png-1a454201d8c555ac0ef67f4eb70532bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2D/UI/JoystickSplitted.png"
-dest_files=["res://.godot/imported/JoystickSplitted.png-c7d9b868fb515a0772b6a04a6c90999e.ctex"]
+source_file="res://assets/2D/UI/fundamentos/dicionario.png"
+dest_files=["res://.godot/imported/dicionario.png-1a454201d8c555ac0ef67f4eb70532bd.ctex"]
 
 [params]
 

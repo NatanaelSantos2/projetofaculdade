@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://bw72m2k38yots"]
 
-[ext_resource type="Script" path="res://script/variacoes/scrollVariacoes.gd" id="1_n2r6t"]
+[ext_resource type="Script" path="res://script/UI/variacoes/scrollVariacoes.gd" id="1_n2r6t"]
 [ext_resource type="PackedScene" uid="uid://b0nmucgpfoa4g" path="res://main.tscn" id="2_qe4mx"]
-[ext_resource type="Script" path="res://script/variacoes/listVarLeitura.gd" id="3_dilnl"]
+[ext_resource type="Script" path="res://script/UI/variacoes/listVarLeituraVar.gd" id="3_dilnl"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vpnv8"]
 

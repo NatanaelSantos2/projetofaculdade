@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://fxwwn1jq581p" path="res://scenes/UI/TelaPrincipal.tscn" id="1_kec7e"]
 [ext_resource type="PackedScene" uid="uid://blmhgkkujxiu0" path="res://scenes/characters/player.tscn" id="2_1i48k"]
-[ext_resource type="Texture2D" uid="uid://di2xuo80uxrij" path="res://assets/2D/icon.svg" id="3_2e8bc"]
+[ext_resource type="Texture2D" uid="uid://di2xuo80uxrij" path="res://icon.svg" id="3_2e8bc"]
 [ext_resource type="Script" path="res://script/areaAdicionar.gd" id="5_ls26k"]
 [ext_resource type="Script" path="res://script/area_caixas.gd" id="5_t3hmd"]
 [ext_resource type="PackedScene" uid="uid://dfcvv87lu1drp" path="res://scenes/objects/caixas/caixas_1.tscn" id="5_uev5i"]
