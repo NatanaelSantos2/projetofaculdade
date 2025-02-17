@@ -1,42 +1,44 @@
-[gd_scene load_steps=21 format=3 uid="uid://cqiusknjrctgn"]
+[gd_scene load_steps=21 format=3 uid="uid://dl5c62u0e22nf"]
 
 [ext_resource type="Script" path="res://script/UI/fundamentos/ScrollFundamentos.gd" id="1_112sm"]
-[ext_resource type="PackedScene" uid="uid://bw72m2k38yots" path="res://scenes/UI/variacoes.tscn" id="2_s7may"]
-[ext_resource type="Texture2D" uid="uid://dorwfm48g3rhx" path="res://assets/2D/UI/fundamentos/print.png" id="3_vr0lo"]
-[ext_resource type="Texture2D" uid="uid://b23j1w36fht25" path="res://assets/2D/UI/fundamentos/variaveis.png" id="4_uu4yi"]
-[ext_resource type="Texture2D" uid="uid://qfyh4bh77xtn" path="res://assets/2D/UI/fundamentos/Estrutruas Condicionais.png" id="5_kfba0"]
-[ext_resource type="Texture2D" uid="uid://b2rd2084kdfmq" path="res://assets/2D/UI/fundamentos/LacoRepetfor.png" id="6_of7ml"]
-[ext_resource type="Texture2D" uid="uid://c38thbjs0p875" path="res://assets/2D/UI/fundamentos/LacoRepetwhile.png" id="7_s14sn"]
-[ext_resource type="Texture2D" uid="uid://cab2ufo78nlt2" path="res://assets/2D/UI/fundamentos/funcoes.png" id="8_2ckb5"]
-[ext_resource type="Texture2D" uid="uid://de34mg3oq2fdb" path="res://assets/2D/UI/fundamentos/lista.png" id="9_hur1s"]
-[ext_resource type="Texture2D" uid="uid://d1fkr7pw022er" path="res://assets/2D/UI/fundamentos/dicionario.png" id="10_nvh10"]
-[ext_resource type="Texture2D" uid="uid://ddobs30rvu82t" path="res://assets/2D/UI/fundamentos/manipulaArquivos.png" id="11_8iods"]
-[ext_resource type="Texture2D" uid="uid://di3s3ikehuatv" path="res://assets/2D/UI/fundamentos/poo.png" id="12_mclli"]
+[ext_resource type="PackedScene" uid="uid://caw08vewcrxqc" path="res://scenes/UI/variacoes.tscn" id="2_6fgpw"]
+[ext_resource type="Texture2D" uid="uid://dorwfm48g3rhx" path="res://assets/2D/UI/fundamentos/print.png" id="3_m3er2"]
+[ext_resource type="Texture2D" uid="uid://b23j1w36fht25" path="res://assets/2D/UI/fundamentos/variaveis.png" id="4_bs6sg"]
+[ext_resource type="Texture2D" uid="uid://qfyh4bh77xtn" path="res://assets/2D/UI/fundamentos/Estrutruas Condicionais.png" id="5_mrjgg"]
+[ext_resource type="Texture2D" uid="uid://b2rd2084kdfmq" path="res://assets/2D/UI/fundamentos/LacoRepetfor.png" id="6_6etp1"]
+[ext_resource type="Texture2D" uid="uid://c38thbjs0p875" path="res://assets/2D/UI/fundamentos/LacoRepetwhile.png" id="7_8mm08"]
+[ext_resource type="Texture2D" uid="uid://cab2ufo78nlt2" path="res://assets/2D/UI/fundamentos/funcoes.png" id="8_eum67"]
+[ext_resource type="Texture2D" uid="uid://de34mg3oq2fdb" path="res://assets/2D/UI/fundamentos/lista.png" id="9_2ssr8"]
+[ext_resource type="Texture2D" uid="uid://d1fkr7pw022er" path="res://assets/2D/UI/fundamentos/dicionario.png" id="10_rj0y0"]
+[ext_resource type="Texture2D" uid="uid://ddobs30rvu82t" path="res://assets/2D/UI/fundamentos/manipulaArquivos.png" id="11_nkmbh"]
+[ext_resource type="Texture2D" uid="uid://di3s3ikehuatv" path="res://assets/2D/UI/fundamentos/poo.png" id="12_jy113"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l2kwu"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dsbfr"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5tj1r"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i484n"]
 
-[sub_resource type="Theme" id="Theme_oxv7b"]
-HScrollBar/styles/scroll = SubResource("StyleBoxEmpty_l2kwu")
-VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_5tj1r")
+[sub_resource type="Theme" id="Theme_pg0cs"]
+HScrollBar/styles/scroll = SubResource("StyleBoxEmpty_dsbfr")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_i484n")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4j8ot"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nk27e"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7cr0u"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oknww"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_48vug"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8mn2n"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mqvbj"]
-size = Vector2(1152, 300)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_460ng"]
+size = Vector2(1152, 350)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ngtr2"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8wl5g"]
 
 [node name="Fundamentos" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_top = -8.0
-offset_bottom = -8.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -49,56 +51,55 @@ anchor_bottom = 0.5
 offset_left = -576.0
 offset_top = -167.0
 offset_right = 576.0
-offset_bottom = 180.0
+offset_bottom = 153.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_oxv7b")
+theme = SubResource("Theme_pg0cs")
 vertical_scroll_mode = 0
 script = ExtResource("1_112sm")
-variacoesScene = ExtResource("2_s7may")
+variacoesScene = ExtResource("2_6fgpw")
 
-[node name="Listfun" type="ItemList" parent="CanvasLayer/ScrollFun"]
+[node name="ListFun" type="ItemList" parent="CanvasLayer/ScrollFun"]
 custom_minimum_size = Vector2(3500, 0)
-layout_direction = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/v_separation = 78
+theme_override_constants/v_separation = 110
 theme_override_constants/h_separation = 120
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4j8ot")
-theme_override_styles/panel = SubResource("StyleBoxEmpty_7cr0u")
-theme_override_styles/hovered = SubResource("StyleBoxEmpty_48vug")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nk27e")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_oknww")
+theme_override_styles/hovered = SubResource("StyleBoxEmpty_8mn2n")
 item_count = 10
 max_columns = 10
 icon_scale = 2.0
-item_0/icon = ExtResource("3_vr0lo")
-item_1/icon = ExtResource("4_uu4yi")
-item_2/icon = ExtResource("5_kfba0")
-item_3/icon = ExtResource("6_of7ml")
-item_4/icon = ExtResource("7_s14sn")
-item_5/icon = ExtResource("8_2ckb5")
-item_6/icon = ExtResource("9_hur1s")
-item_7/icon = ExtResource("10_nvh10")
-item_8/icon = ExtResource("11_8iods")
-item_9/icon = ExtResource("12_mclli")
+item_0/icon = ExtResource("3_m3er2")
+item_1/icon = ExtResource("4_bs6sg")
+item_2/icon = ExtResource("5_mrjgg")
+item_3/icon = ExtResource("6_6etp1")
+item_4/icon = ExtResource("7_8mm08")
+item_5/icon = ExtResource("8_eum67")
+item_6/icon = ExtResource("9_2ssr8")
+item_7/icon = ExtResource("10_rj0y0")
+item_8/icon = ExtResource("11_nkmbh")
+item_9/icon = ExtResource("12_jy113")
 
 [node name="TouchScrollFun" type="TouchScreenButton" parent="CanvasLayer"]
-position = Vector2(574, 330)
-shape = SubResource("RectangleShape2D_mqvbj")
+position = Vector2(574, 320)
+shape = SubResource("RectangleShape2D_460ng")
 
 [node name="TextFun" type="TextEdit" parent="CanvasLayer"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -259.0
-offset_top = 60.0
-offset_right = 288.0
-offset_bottom = 103.0
+offset_left = -273.0
+offset_top = 33.0
+offset_right = 274.0
+offset_bottom = 74.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 21
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ngtr2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8wl5g")
 text = "Escolha um nível: toque duas vezes para selecionar..."
 
-[connection signal="item_activated" from="CanvasLayer/ScrollFun/Listfun" to="CanvasLayer/ScrollFun" method="_on_item_list_item_activated"]
-[connection signal="released" from="CanvasLayer/TouchScrollFun" to="CanvasLayer/ScrollFun" method="_on_touch_area_released"]
+[connection signal="item_activated" from="CanvasLayer/ScrollFun/ListFun" to="CanvasLayer/ScrollFun" method="_on_list_fun_item_activated"]
+[connection signal="released" from="CanvasLayer/TouchScrollFun" to="CanvasLayer/ScrollFun" method="_on_touch_scroll_fun_released"]

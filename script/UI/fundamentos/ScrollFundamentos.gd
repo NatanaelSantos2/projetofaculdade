@@ -7,7 +7,7 @@ extends ScrollContainer
 @onready var touch_scroll_fun: TouchScreenButton = $"../TouchScrollFun"
 
 #Limites do scroll na horizontal
-const LIMITMAXSCROLL:int = 3500
+const LIMITMAXSCROLL:int = 3510
 const LIMITMINSCROLL:int = 0
 
 var validacaoToque:bool = false
@@ -27,9 +27,9 @@ func _input(event):
 	if event is InputEventScreenDrag:
 		relative -= event.relative.x 
 
-func _on_touch_area_released() -> void:
+func _on_touch_scroll_fun_released() -> void:
 	validacaoToque = false
 
-func _on_item_list_item_activated(index: int) -> void:
+func _on_list_fun_item_activated(index: int) -> void:
 	Global.contCaixa = str(index)
 	get_tree().change_scene_to_packed(variacoesScene)

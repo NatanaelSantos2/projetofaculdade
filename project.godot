@@ -32,6 +32,10 @@ validarJoystick={
 "deadzone": 0.5,
 "events": []
 }
+voltarVar={
+"deadzone": 0.5,
+"events": []
+}
 
 [input_devices]
 

@@ -2,105 +2,356 @@
 	"0": {
 		"0": {
 			"nome": "print",
-			"imagem": "res://icon.svg"
+			"imagem": "res://icon.svg",
+			"descricao": "Para imprimir uma mensagem no console, usamos a função print().",
+			"exemplo": "print(\"Olá, mundo!\")",
 		},
 		"1": {
-			"nome": "Desafio da variavel",
-			"imagem": "res://icon.svg"
+			"nome": "print com variáveis",
+			"imagem": "res://icon.svg",
+			"descricao": "Podemos imprimir variáveis concatenando valores com vírgula.",
+			"exemplo": "nome = 'Natanael'\nprint('Meu nome é', nome)"
 		},
 		"2": {
 			"nome": "print com f-string",
-			"imagem": "res://icon.svg"
+			"imagem": "res://icon.svg",
+			"descricao": "Usamos f-strings para formatar a saída de maneira intuitiva.",
+			"exemplo": "nome = 'Natanael'\nidade = 25\nprint(f'Meu nome é {nome} e eu tenho {idade} anos.')"
+		},
+		"3": {
+			"nome": "print com múltiplas linhas",
+			"imagem": "res://icon.svg",
+			"descricao": "Podemos usar três aspas para imprimir múltiplas linhas de texto.",
+			"exemplo": "print('''\nLinha 1\nLinha 2\nLinha 3\n''')"
+		},
+		"4": {
+			"nome": "print com caracteres especiais",
+			"imagem": "res://icon.svg",
+			"descricao": "Podemos usar caracteres de escape para formatar a saída.",
+			"exemplo": "print('Linha 1\nLinha 2\tTabulação')"
 		}
 	},
 	"1": {
 		"0": {
-			"nome": "for",
-			"imagem": "res://icon.svg"
+			"nome": "Variáveis em Python",
+			"imagem": "res://icon.svg",
+			"descricao": "Uma variável armazena um valor na memória e pode ser referenciada por um nome.",
+			"exemplo": "idade = 25\nprint(idade)"
 		},
 		"1": {
-			"nome": "for com",
-			"imagem": "res://icon.svg"
+			"nome": "Atribuição múltipla",
+			"imagem": "res://icon.svg",
+			"descricao": "Podemos atribuir múltiplos valores a múltiplas variáveis em uma única linha.",
+			"exemplo": "a, b, c = 1, 2, 3\nprint(a, b, c)"
+		},
+		"2": {
+			"nome": "Tipos de variáveis",
+			"imagem": "res://icon.svg",
+			"descricao": "As variáveis podem armazenar diferentes tipos de dados, como inteiros, floats e strings.",
+			"exemplo": "numero = 10\npi = 3.14\nnome = 'Python'\nprint(numero, pi, nome)"
+		},
+		"3": {
+			"nome": "Concatenação de strings",
+			"imagem": "res://icon.svg",
+			"descricao": "Podemos concatenar strings usando o operador +.",
+			"exemplo": "nome = 'Natanael'\nsobrenome = 'Silva'\nprint(nome + ' ' + sobrenome)"
+		},
+		"4": {
+			"nome": "Conversão de tipos",
+			"imagem": "res://icon.svg",
+			"descricao": "Podemos converter variáveis para diferentes tipos de dados usando funções como int(), float() e str().",
+			"exemplo": "idade = '25'\nidade_numero = int(idade)\nprint(idade_numero + 5)"
 		}
 	},
 	"2": {
 		"0": {
-			"nome": "while",
-			"imagem": "res://icon.svg"
+			"nome": "Estruturas Condicionais",
+			"imagem": "res://icon.svg",
+			"descricao": "Usamos if para executar código apenas se uma condição for verdadeira.",
+			"exemplo": "idade = 18\nif idade >= 18:\n    print('Maior de idade')"
 		},
 		"1": {
-			"nome": "while com",
-			"imagem": "res://icon.svg"
+			"nome": "if-else",
+			"imagem": "res://icon.svg",
+			"descricao": "Usamos else para definir um bloco de código caso a condição do if seja falsa.",
+			"exemplo": "idade = 16\nif idade >= 18:\n    print('Maior de idade')\nelse:\n    print('Menor de idade')"
+		},
+		"2": {
+			"nome": "if-elif-else",
+			"imagem": "res://icon.svg",
+			"descricao": "Usamos elif para verificar múltiplas condições sequencialmente.",
+			"exemplo": "nota = 7\nif nota >= 9:\n    print('Excelente')\nelif nota >= 7:\n    print('Bom')\nelse:\n    print('Precisa melhorar')",
+		},
+		"3": {
+			"nome": "Operador ternário",
+			"imagem": "res://icon.svg",
+			"descricao": "Podemos escrever expressões condicionais de forma compacta com operador ternário.",
+			"exemplo": "idade = 20\ncategoria = 'Adulto' if idade >= 18 else 'Menor'\nprint(categoria)",
+		},
+		"4": {
+			"nome": "Condições aninhadas",
+			"imagem": "res://icon.svg",
+			"descricao": "Podemos aninhar estruturas if dentro de outras para verificar múltiplas condições complexas.",
+			"exemplo": "idade = 20\ntem_carteira = True\nif idade >= 18:\n    if tem_carteira:\n        print('Pode dirigir')\n    else:\n        print('Precisa de carteira')\nelse:\n    print('Menor de idade')",
 		}
 	},
 	"3": {
 		"0": {
-			"nome": "while",
-			"imagem": "res://icon.svg"
+			"nome": "Laço for básico",
+			"imagem": "res://icon.svg",
+			"descricao": "Usamos o laço for para iterar sobre uma sequência de elementos.",
+			"exemplo": "for i in range(5):\n    print(i)",
+			"saida": "0\n1\n2\n3\n4"
 		},
 		"1": {
-			"nome": "while com",
-			"imagem": "res://icon.svg"
+			"nome": "Iterando sobre uma lista",
+			"imagem": "res://icon.svg",
+			"descricao": "Podemos percorrer uma lista diretamente com for.",
+			"exemplo": "frutas = ['maçã', 'banana', 'uva']\nfor fruta in frutas:\n    print(fruta)",
+			"saida": "maçã\nbanana\nuva"
+		},
+		"2": {
+			"nome": "Usando enumerate()",
+			"imagem": "res://icon.svg",
+			"descricao": "A função enumerate() permite acessar o índice e o valor simultaneamente.",
+			"exemplo": "nomes = ['Ana', 'Carlos', 'Beatriz']\nfor i, nome in enumerate(nomes):\n    print(i, nome)",
+			"saida": "0 Ana\n1 Carlos\n2 Beatriz"
+		},
+		"3": {
+			"nome": "Iterando sobre um dicionário",
+			"imagem": "res://icon.svg",
+			"descricao": "Podemos percorrer as chaves e valores de um dicionário com for.",
+			"exemplo": "dados = {'nome': 'João', 'idade': 30}\nfor chave, valor in dados.items():\n    print(chave, valor)",
+			"saida": "nome João\nidade 30"
+		},
+		"4": {
+			"nome": "Compreensão de listas",
+			"imagem": "res://icon.svg",
+			"descricao": "Podemos gerar listas de forma concisa usando list comprehension.",
+			"exemplo": "quadrados = [x**2 for x in range(5)]\nprint(quadrados)",
+			"saida": "[0, 1, 4, 9, 16]"
 		}
 	},
 	"4": {
 		"0": {
-			"nome": "while",
-			"imagem": "res://icon.svg"
+			"nome": "Laço while básico",
+			"imagem": "res://icon.svg",
+			"descricao": "Usamos o laço while para executar um bloco de código enquanto uma condição for verdadeira.",
+			"exemplo": "contador = 0\nwhile contador < 5:\n    print(contador)\n    contador += 1",
+			"saida": "0\n1\n2\n3\n4"
 		},
 		"1": {
-			"nome": "while com",
-			"imagem": "res://icon.svg"
+			"nome": "Loop infinito",
+			"imagem": "res://icon.svg",
+			"descricao": "Se não tivermos uma condição de parada, o while pode executar indefinidamente.",
+			"exemplo": "while True:\n    print('Executando')\n    break",
+			"saida": "Executando"
+		},
+		"2": {
+			"nome": "Usando break",
+			"imagem": "res://icon.svg",
+			"descricao": "A instrução break interrompe o laço antes que a condição se torne falsa.",
+			"exemplo": "contador = 0\nwhile contador < 10:\n    if contador == 5:\n        break\n    print(contador)\n    contador += 1",
+			"saida": "0\n1\n2\n3\n4"
+		},
+		"3": {
+			"nome": "Usando continue",
+			"imagem": "res://icon.svg",
+			"descricao": "A instrução continue pula para a próxima iteração sem executar o código subsequente.",
+			"exemplo": "contador = 0\nwhile contador < 5:\n    contador += 1\n    if contador == 3:\n        continue\n    print(contador)",
+			"saida": "1\n2\n4\n5"
+		},
+		"4": {
+			"nome": "While com else",
+			"imagem": "res://icon.svg",
+			"descricao": "O bloco else é executado quando a condição do while se torna falsa sem um break.",
+			"exemplo": "contador = 0\nwhile contador < 3:\n    print(contador)\n    contador += 1\nelse:\n    print('Loop finalizado')",
+			"saida": "0\n1\n2\nLoop finalizado"
 		}
 	},
 	"5": {
 		"0": {
-			"nome": "while",
-			"imagem": "res://icon.svg"
+			"nome": "Definição de função",
+			"imagem": "res://icon.svg",
+			"descricao": "Usamos a palavra-chave def para definir uma função.",
+			"exemplo": "def saudacao():\n    print('Olá, mundo!')\nsaudacao()",
+			"saida": "Olá, mundo!"
 		},
 		"1": {
-			"nome": "while com",
-			"imagem": "res://icon.svg"
+			"nome": "Função com parâmetros",
+			"imagem": "res://icon.svg",
+			"descricao": "Podemos passar argumentos para uma função.",
+			"exemplo": "def somar(a, b):\n    return a + b\nprint(somar(2, 3))",
+			"saida": "5"
+		},
+		"2": {
+			"nome": "Função com valor padrão",
+			"imagem": "res://icon.svg",
+			"descricao": "Podemos definir valores padrão para parâmetros de uma função.",
+			"exemplo": "def apresentar(nome='Desconhecido'):\n    print(f'Olá, {nome}!')\napresentar()\napresentar('Carlos')",
+			"saida": "Olá, Desconhecido!\nOlá, Carlos!"
+		},
+		"3": {
+			"nome": "Retornando múltiplos valores",
+			"imagem": "res://icon.svg",
+			"descricao": "Uma função pode retornar múltiplos valores como uma tupla.",
+			"exemplo": "def coordenadas():\n    return 10, 20\nx, y = coordenadas()\nprint(x, y)",
+			"saida": "10 20"
+		},
+		"4": {
+			"nome": "Função lambda",
+			"imagem": "res://icon.svg",
+			"descricao": "Expressões lambda são funções anônimas de uma linha.",
+			"exemplo": "dobro = lambda x: x * 2\nprint(dobro(5))",
+			"saida": "10"
 		}
 	},
 	"6": {
 		"0": {
-			"nome": "while",
-			"imagem": "res://icon.svg"
+			"nome": "Lista básica",
+			"imagem": "res://icon.svg",
+			"descricao": "Uma lista é uma coleção ordenada e mutável de elementos.",
+			"exemplo": "numeros = [1, 2, 3, 4, 5]\nprint(numeros)",
+			"saida": "[1, 2, 3, 4, 5]"
 		},
 		"1": {
-			"nome": "while com",
-			"imagem": "res://icon.svg"
+			"nome": "Iterando sobre uma lista",
+			"imagem": "res://icon.svg",
+			"descricao": "Podemos percorrer os elementos de uma lista com um laço for.",
+			"exemplo": "frutas = ['maçã', 'banana', 'uva']\nfor fruta in frutas:\n    print(fruta)",
+			"saida": "maçã\nbanana\nuva"
+		},
+		"2": {
+			"nome": "Adicionando elementos a uma lista",
+			"imagem": "res://icon.svg",
+			"descricao": "Podemos adicionar itens a uma lista com append().",
+			"exemplo": "numeros = [1, 2, 3]\nnumeros.append(4)\nprint(numeros)",
+			"saida": "[1, 2, 3, 4]"
+		},
+		"3": {
+			"nome": "Removendo elementos de uma lista",
+			"imagem": "res://icon.svg",
+			"descricao": "Podemos remover itens de uma lista com remove().",
+			"exemplo": "numeros = [1, 2, 3, 4]\nnumeros.remove(3)\nprint(numeros)",
+			"saida": "[1, 2, 4]"
+		},
+		"4": {
+			"nome": "Ordenando uma lista",
+			"imagem": "res://icon.svg",
+			"descricao": "Podemos ordenar uma lista usando sort().",
+			"exemplo": "numeros = [3, 1, 4, 2]\nnumeros.sort()\nprint(numeros)",
+			"saida": "[1, 2, 3, 4]"
 		}
 	},
 	"7": {
 		"0": {
-			"nome": "while",
-			"imagem": "res://icon.svg"
+			"nome": "Dicionário básico",
+			"imagem": "res://icon.svg",
+			"descricao": "Um dicionário armazena pares de chave-valor.",
+			"exemplo": "dados = {'nome': 'João', 'idade': 30}\nprint(dados['nome'])",
+			"saida": "João"
 		},
 		"1": {
-			"nome": "while com",
-			"imagem": "res://icon.svg"
+			"nome": "Iterando sobre um dicionário",
+			"imagem": "res://icon.svg",
+			"descricao": "Podemos percorrer as chaves e valores de um dicionário.",
+			"exemplo": "dados = {'nome': 'Ana', 'idade': 25}\nfor chave, valor in dados.items():\n    print(chave, valor)",
+			"saida": "nome Ana\nidade 25"
+		},
+		"2": {
+			"nome": "Adicionando elementos a um dicionário",
+			"imagem": "res://icon.svg",
+			"descricao": "Podemos adicionar itens a um dicionário atribuindo uma nova chave.",
+			"exemplo": "dados = {'nome': 'Carlos'}\ndados['idade'] = 28\nprint(dados)",
+			"saida": "{'nome': 'Carlos', 'idade': 28}"
+		},
+		"3": {
+			"nome": "Removendo elementos de um dicionário",
+			"imagem": "res://icon.svg",
+			"descricao": "Podemos remover itens de um dicionário verificando antes se a chave existe.",
+			"exemplo": "dados = {'nome': 'Carlos', 'idade': 28}\nif 'idade' in dados:\n    del dados['idade']\nprint(dados)",
+			"saida": "{'nome': 'Carlos'}"
+		},
+		"4": {
+			"nome": "Verificando existência de chave",
+			"imagem": "res://icon.svg",
+			"descricao": "Podemos verificar se uma chave existe em um dicionário com in.",
+			"exemplo": "dados = {'nome': 'Maria', 'idade': 22}\nprint('idade' in dados)\nprint('altura' in dados)",
+			"saida": "True\nFalse"
 		}
 	},
 	"8": {
 		"0": {
-			"nome": "while",
-			"imagem": "res://icon.svg"
+			"nome": "Abrindo um arquivo para leitura",
+			"imagem": "res://icon.svg",
+			"descricao": "Usamos a função open() para abrir um arquivo no modo de leitura.",
+			"exemplo": "with open('arquivo.txt', 'r') as arquivo:\n    conteudo = arquivo.read()\nprint(conteudo)",
+			"saida": "(conteúdo do arquivo)"
 		},
 		"1": {
-			"nome": "while com",
-			"imagem": "res://icon.svg"
+			"nome": "Escrevendo em um arquivo",
+			"imagem": "res://icon.svg",
+			"descricao": "Podemos escrever em um arquivo usando o modo 'w'.",
+			"exemplo": "with open('arquivo.txt', 'w') as arquivo:\n    arquivo.write('Olá, mundo!')",
+			"saida": "(arquivo atualizado)"
+		},
+		"2": {
+			"nome": "Adicionando conteúdo a um arquivo",
+			"imagem": "res://icon.svg",
+			"descricao": "O modo 'a' adiciona conteúdo ao final de um arquivo existente.",
+			"exemplo": "with open('arquivo.txt', 'a') as arquivo:\n    arquivo.write('\nNova linha adicionada')",
+			"saida": "(arquivo atualizado)"
+		},
+		"3": {
+			"nome": "Lendo um arquivo linha por linha",
+			"imagem": "res://icon.svg",
+			"descricao": "Usamos um loop para ler um arquivo linha por linha.",
+			"exemplo": "with open('arquivo.txt', 'r') as arquivo:\n    for linha in arquivo:\n        print(linha.strip())",
+			"saida": "(conteúdo do arquivo, linha por linha)"
+		},
+		"4": {
+			"nome": "Usando seek() e tell()",
+			"imagem": "res://icon.svg",
+			"descricao": "Podemos mover o cursor de leitura/escrita em um arquivo.",
+			"exemplo": "with open('arquivo.txt', 'r') as arquivo:\n    print(arquivo.tell())\n    arquivo.seek(5)\n    print(arquivo.read())",
+			"saida": "(posição do cursor e conteúdo a partir do byte 5)"
 		}
 	},
 	"9": {
 		"0": {
-			"nome": "POO",
-			"imagem": "res://icon.svg"
+			"nome": "Definição de classe",
+			"imagem": "res://icon.svg",
+			"descricao": "Criamos classes usando a palavra-chave class.",
+			"exemplo": "class Pessoa:\n    pass",
+			"saida": "(nenhuma saída)"
 		},
 		"1": {
-			"nome": "POO com",
-			"imagem": "res://icon.svg"
+			"nome": "Criando um objeto",
+			"imagem": "res://icon.svg",
+			"descricao": "Instanciamos um objeto de uma classe chamando seu nome.",
+			"exemplo": "class Pessoa:\n    pass\n\np = Pessoa()\nprint(p)",
+			"saida": "<__main__.Pessoa object at 0x...>"
+		},
+		"2": {
+			"nome": "Método __init__",
+			"imagem": "res://icon.svg",
+			"descricao": "Usamos __init__ para inicializar um objeto.",
+			"exemplo": "class Pessoa:\n    def __init__(self, nome):\n        self.nome = nome\n\np = Pessoa('João')\nprint(p.nome)",
+			"saida": "João"
+		},
+		"3": {
+			"nome": "Métodos de classe",
+			"imagem": "res://icon.svg",
+			"descricao": "Podemos definir métodos dentro de uma classe.",
+			"exemplo": "class Pessoa:\n    def __init__(self, nome):\n        self.nome = nome\n    def dizer_ola(self):\n        return f'Olá, meu nome é {self.nome}'\n\np = Pessoa('Ana')\nprint(p.dizer_ola())",
+			"saida": "Olá, meu nome é Ana"
+		},
+		"4": {
+			"nome": "Herança",
+			"imagem": "res://icon.svg",
+			"descricao": "Uma classe pode herdar atributos e métodos de outra.",
+			"exemplo": "class Animal:\n    def falar(self):\n        return 'Som genérico'\n\nclass Cachorro(Animal):\n    def falar(self):\n        return 'Au au'\n\ndog = Cachorro()\nprint(dog.falar())",
+			"saida": "Au au"
 		}
 	}
 }
