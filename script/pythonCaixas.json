@@ -1,0 +1,69 @@
+{
+	"0": {
+		"0": {
+			"nome": "print",
+			"textura": "res://icon.svg",
+			"1": "",
+			"": "",
+			"": "",
+			"descricao": "Para imprimir uma mensagem no console, usamos a função print().",
+			"exemplo": "print(\"Olá, mundo!\")",
+		},
+		"1": {
+			"nome": "print com variáveis",
+			"textura": "res://icon.svg",
+			"descricao": "Podemos imprimir variáveis concatenando valores com vírgula.",
+			"exemplo": "nome = 'Natanael'\nprint('Meu nome é', nome)"
+		},
+		"2": {
+			"nome": "print com f-string",
+			"textura": "res://icon.svg",
+			"descricao": "Usamos f-strings para formatar a saída de maneira intuitiva.",
+			"exemplo": "nome = 'Natanael'\nidade = 25\nprint(f'Meu nome é {nome} e eu tenho {idade} anos.')"
+		},
+		"3": {
+			"nome": "print com múltiplas linhas",
+			"textura": "res://icon.svg",
+			"descricao": "Podemos usar três aspas para imprimir múltiplas linhas de texto.",
+			"exemplo": "print('''\nLinha 1\nLinha 2\nLinha 3\n''')"
+		},
+		"4": {
+			"nome": "print com caracteres especiais",
+			"textura": "res://icon.svg",
+			"descricao": "Podemos usar caracteres de escape para formatar a saída.",
+			"exemplo": "print('Linha 1\nLinha 2\tTabulação')"
+		}
+	},
+	"1": {
+		"0": {
+			"nome": "Variáveis em Python",
+			"textura": "res://icon.svg",
+			"descricao": "Uma variável armazena um valor na memória e pode ser referenciada por um nome.",
+			"exemplo": "idade = 25\nprint(idade)"
+		},
+		"1": {
+			"nome": "Atribuição múltipla",
+			"textura": "res://icon.svg",
+			"descricao": "Podemos atribuir múltiplos valores a múltiplas variáveis em uma única linha.",
+			"exemplo": "a, b, c = 1, 2, 3\nprint(a, b, c)"
+		},
+		"2": {
+			"nome": "Tipos de variáveis",
+			"textura": "res://icon.svg",
+			"descricao": "As variáveis podem armazenar diferentes tipos de dados, como inteiros, floats e strings.",
+			"exemplo": "numero = 10\npi = 3.14\nnome = 'Python'\nprint(numero, pi, nome)"
+		},
+		"3": {
+			"nome": "Concatenação de strings",
+			"textura": "res://icon.svg",
+			"descricao": "Podemos concatenar strings usando o operador +.",
+			"exemplo": "nome = 'Natanael'\nsobrenome = 'Silva'\nprint(nome + ' ' + sobrenome)"
+		},
+		"4": {
+			"nome": "Conversão de tipos",
+			"textura": "res://icon.svg",
+			"descricao": "Podemos converter variáveis para diferentes tipos de dados usando funções como int(), float() e str().",
+			"exemplo": "idade = '25'\nidade_numero = int(idade)\nprint(idade_numero + 5)"
+		}
+	}
+}

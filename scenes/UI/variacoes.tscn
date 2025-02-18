@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://caw08vewcrxqc"]
+[gd_scene load_steps=13 format=3 uid="uid://dl5c62u0e22nf"]
 
 [ext_resource type="Script" path="res://script/UI/variacoes/scrollVariacoes.gd" id="1_n2r6t"]
-[ext_resource type="PackedScene" uid="uid://b0nmucgpfoa4g" path="res://main.tscn" id="2_qe4mx"]
 [ext_resource type="Script" path="res://script/UI/variacoes/listVarLeituraVar.gd" id="3_dilnl"]
+[ext_resource type="Texture2D" uid="uid://di2xuo80uxrij" path="res://icon.svg" id="4_e7qrn"]
+[ext_resource type="Script" path="res://script/UI/variacoes/voltar_var.gd" id="5_jitms"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wvp0j"]
 
@@ -19,6 +20,9 @@ VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_wvp0j")
 size = Vector2(1152, 450)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o25pj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufmi5"]
+size = Vector2(100, 100)
 
 [node name="Variacoes" type="Control"]
 layout_mode = 3
@@ -44,7 +48,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_hoisp")
 script = ExtResource("1_n2r6t")
-mainScene = ExtResource("2_qe4mx")
 
 [node name="ListVar" type="ItemList" parent="CanvasLayer/ScrollVar"]
 layout_mode = 2
@@ -79,6 +82,14 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxEmpty_o25pj")
 text = "Escolha um nível: toque duas vezes para selecionar..."
+
+[node name="VoltarVar" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(1063, 19)
+scale = Vector2(0.539063, 0.539063)
+texture_normal = ExtResource("4_e7qrn")
+shape = SubResource("RectangleShape2D_ufmi5")
+action = "voltarVar"
+script = ExtResource("5_jitms")
 
 [connection signal="item_activated" from="CanvasLayer/ScrollVar/ListVar" to="CanvasLayer/ScrollVar" method="_on_list_var_item_activated"]
 [connection signal="released" from="CanvasLayer/TouchScrollVar" to="CanvasLayer/ScrollVar" method="_on_touch_scroll_var_released"]

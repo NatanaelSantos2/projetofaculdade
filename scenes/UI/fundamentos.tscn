@@ -1,7 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://dl5c62u0e22nf"]
+[gd_scene load_steps=20 format=3 uid="uid://dl5c62u0e22nf"]
 
 [ext_resource type="Script" path="res://script/UI/fundamentos/ScrollFundamentos.gd" id="1_112sm"]
-[ext_resource type="PackedScene" uid="uid://caw08vewcrxqc" path="res://scenes/UI/variacoes.tscn" id="2_6fgpw"]
 [ext_resource type="Texture2D" uid="uid://dorwfm48g3rhx" path="res://assets/2D/UI/fundamentos/print.png" id="3_m3er2"]
 [ext_resource type="Texture2D" uid="uid://b23j1w36fht25" path="res://assets/2D/UI/fundamentos/variaveis.png" id="4_bs6sg"]
 [ext_resource type="Texture2D" uid="uid://qfyh4bh77xtn" path="res://assets/2D/UI/fundamentos/Estrutruas Condicionais.png" id="5_mrjgg"]
@@ -57,7 +56,6 @@ grow_vertical = 2
 theme = SubResource("Theme_pg0cs")
 vertical_scroll_mode = 0
 script = ExtResource("1_112sm")
-variacoesScene = ExtResource("2_6fgpw")
 
 [node name="ListFun" type="ItemList" parent="CanvasLayer/ScrollFun"]
 custom_minimum_size = Vector2(3500, 0)

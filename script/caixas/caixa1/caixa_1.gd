@@ -10,6 +10,17 @@ extends MeshInstance3D
 #o proprio nó
 @onready var caixas_1: MeshInstance3D = $"."
 
+var cont:int = 0
+
+func _ready() -> void:
+	#print(Global.caixasValores)
+	for i in range(Global.caixasValores.size()):
+		var cena = Global.caixasValores[i]
+		
+		if cont == 0:
+			cont += 1
+			print("1")
+
 func _process(_delta: float) -> void:
 	if drop_caixas.button_pressed:
 		drop_object()

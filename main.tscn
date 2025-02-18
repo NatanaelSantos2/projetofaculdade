@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://b0nmucgpfoa4g"]
+[gd_scene load_steps=34 format=3 uid="uid://b0nmucgpfoa4g"]
 
 [ext_resource type="PackedScene" uid="uid://fxwwn1jq581p" path="res://scenes/UI/TelaPrincipal.tscn" id="1_kec7e"]
 [ext_resource type="PackedScene" uid="uid://blmhgkkujxiu0" path="res://scenes/characters/player.tscn" id="2_1i48k"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://s81rie3pjfkb" path="res://scenes/objects/caixas/caixa_3.tscn" id="7_omsnu"]
 [ext_resource type="PackedScene" uid="uid://dvyvej74ss17a" path="res://scenes/objects/caixas/caixa_4.tscn" id="8_lf82e"]
 [ext_resource type="PackedScene" uid="uid://be2h0jnqyu87j" path="res://scenes/objects/caixas/caixa_5.tscn" id="9_68urk"]
+[ext_resource type="PackedScene" uid="uid://bp4wncx05wx2k" path="res://scenes/objects/caixas/areacaixas.tscn" id="11_67xw5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sbs7r"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -176,10 +177,9 @@ mesh = SubResource("BoxMesh_pt5ei")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="areaAdicionar/MeshInstance3D/StaticBody3D"]
 shape = SubResource("BoxShape3D_6kfn4")
 
-[node name="areaCaixas" type="Node3D" parent="." node_paths=PackedStringArray("parent_node")]
+[node name="areaCaixas" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12519, 3.16277)
 script = ExtResource("5_t3hmd")
-parent_node = NodePath("caixa1")
 
 [node name="caixa1" type="Node3D" parent="areaCaixas"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.37127, 0, 0)
@@ -207,6 +207,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.10027, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.57009, 0, 0)
 
 [node name="caixa5" parent="areaCaixas/caixa5" instance=ExtResource("9_68urk")]
+
+[node name="AreaCaixas" parent="." instance=ExtResource("11_67xw5")]
 
 [connection signal="area_entered" from="areaAdicionar" to="areaAdicionar" method="_on_area_entered"]
 [connection signal="area_exited" from="areaAdicionar" to="areaAdicionar" method="_on_area_exited"]

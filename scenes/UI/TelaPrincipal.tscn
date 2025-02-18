@@ -1,12 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://fxwwn1jq581p"]
+[gd_scene load_steps=8 format=3 uid="uid://fxwwn1jq581p"]
 
 [ext_resource type="Script" path="res://script/UI/joystick.gd" id="1_jm4uk"]
 [ext_resource type="Texture2D" uid="uid://c0nyew7102nc5" path="res://assets/2D/UI/joystick/SmalHandle.png" id="1_ud783"]
 [ext_resource type="Texture2D" uid="uid://qqshg46u0svb" path="res://assets/2D/UI/joystick/JoystickSplitted.png" id="3_wi0w6"]
 [ext_resource type="Texture2D" uid="uid://di2xuo80uxrij" path="res://icon.svg" id="4_agu6q"]
+[ext_resource type="Script" path="res://script/UI/variacoes/voltar_var.gd" id="5_jeu4w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hyqyq"]
 radius = 60.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbjeq"]
+size = Vector2(100, 100)
 
 [node name="TelaPrincipal" type="Control"]
 layout_mode = 3
@@ -31,6 +35,14 @@ texture = ExtResource("3_wi0w6")
 
 [node name="Botoes" type="Node" parent="CanvasLayer"]
 
+[node name="voltarTelaPrin" type="TouchScreenButton" parent="CanvasLayer/Botoes"]
+position = Vector2(1040, 24)
+scale = Vector2(0.703125, 0.703125)
+texture_normal = ExtResource("4_agu6q")
+shape = SubResource("RectangleShape2D_cbjeq")
+action = "voltarVar"
+script = ExtResource("5_jeu4w")
+
 [node name="dropCaixas" type="Button" parent="CanvasLayer/Botoes"]
 offset_left = 871.0
 offset_top = 427.0
@@ -40,10 +52,10 @@ disabled = true
 icon = ExtResource("4_agu6q")
 
 [node name="Informacao" type="Button" parent="CanvasLayer/Botoes"]
-offset_left = 1018.0
-offset_top = 203.0
-offset_right = 1154.0
-offset_bottom = 339.0
+offset_left = 983.0
+offset_top = 197.0
+offset_right = 1119.0
+offset_bottom = 333.0
 scale = Vector2(0.710938, 0.640625)
 icon = ExtResource("4_agu6q")
 
