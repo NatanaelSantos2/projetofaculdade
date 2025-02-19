@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://fxwwn1jq581p"]
+[gd_scene load_steps=10 format=3 uid="uid://fxwwn1jq581p"]
 
 [ext_resource type="Script" path="res://script/UI/joystick.gd" id="1_jm4uk"]
 [ext_resource type="Texture2D" uid="uid://c0nyew7102nc5" path="res://assets/2D/UI/joystick/SmalHandle.png" id="1_ud783"]
@@ -10,6 +10,12 @@
 radius = 60.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbjeq"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chnyu"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rim3l"]
 size = Vector2(100, 100)
 
 [node name="TelaPrincipal" type="Control"]
@@ -51,21 +57,19 @@ offset_bottom = 563.0
 disabled = true
 icon = ExtResource("4_agu6q")
 
-[node name="Informacao" type="Button" parent="CanvasLayer/Botoes"]
-offset_left = 983.0
-offset_top = 197.0
-offset_right = 1119.0
-offset_bottom = 333.0
+[node name="Informacao" type="TouchScreenButton" parent="CanvasLayer/Botoes"]
+position = Vector2(1013, 189)
 scale = Vector2(0.710938, 0.640625)
-icon = ExtResource("4_agu6q")
+texture_normal = ExtResource("4_agu6q")
+shape = SubResource("RectangleShape2D_chnyu")
+action = "informacao"
 
-[node name="Descarte" type="Button" parent="CanvasLayer/Botoes"]
-offset_left = 982.0
-offset_top = 308.0
-offset_right = 1118.0
-offset_bottom = 444.0
+[node name="Descarte" type="TouchScreenButton" parent="CanvasLayer/Botoes"]
+position = Vector2(925, 297)
 scale = Vector2(0.726563, 0.734375)
-icon = ExtResource("4_agu6q")
+texture_normal = ExtResource("4_agu6q")
+shape = SubResource("RectangleShape2D_rim3l")
+action = "descarte"
 
 [node name="avisos" type="Node" parent="CanvasLayer"]
 

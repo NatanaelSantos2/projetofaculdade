@@ -7,10 +7,9 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_cxbsi"]
 radius = 0.537235
 
-[node name="Caixas1" type="MeshInstance3D" node_paths=PackedStringArray("caixas_1")]
+[node name="Caixas1" type="MeshInstance3D"]
 mesh = SubResource("BoxMesh_oyrft")
 script = ExtResource("1_o6c48")
-caixas_1 = NodePath(".")
 
 [node name="AreaCaixa1" type="Area3D" parent="."]
 

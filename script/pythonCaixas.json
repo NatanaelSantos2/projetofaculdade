@@ -1,13 +1,30 @@
 {
 	"0": {
 		"0": {
-			"nome": "print",
-			"textura": "res://icon.svg",
-			"1": "",
-			"": "",
-			"": "",
-			"descricao": "Para imprimir uma mensagem no console, usamos a função print().",
-			"exemplo": "print(\"Olá, mundo!\")",
+			"nome1": "print",
+			"descricao1": "'print' é uma função embutida do Python usada para exibir mensagens na saída padrão.", 
+			
+			"nome2": "(",
+			"descricao2": "O parêntese de abertura '(' é usado para iniciar a passagem de argumentos em funções no Python.",
+			"nome2": ")",
+			"descricao2": "O parêntese de fechamento ')' encerra a passagem de argumentos em funções no Python.",
+		
+			"nome3": "'",
+			"descricao3": "As aspas simples (') podem ser usadas para definir strings no Python.",
+			"nome3": "'",
+			"descricao3": "As aspas simples (') podem ser usadas para definir strings no Python.",
+			
+			"nome4": "Olá, mundo!",
+			"descricao4": "Uma string comum usada como exemplo em programas iniciais de diversas linguagens.",
+			
+			"nome5": "vazio",
+			
+			"textura1": "res://icon.svg",
+			"textura2": "res://assets/2D/UI/fundamentos/dicionario.png",
+			"textura3": "res://icon.svg",
+			"textura4": "res://icon.svg",
+			"textura5": "res://icon.svg",
+			"exemplo": "print(Olá, mundo!)"
 		},
 		"1": {
 			"nome": "print com variáveis",

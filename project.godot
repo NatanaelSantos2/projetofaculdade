@@ -36,6 +36,14 @@ voltarVar={
 "deadzone": 0.5,
 "events": []
 }
+informacao={
+"deadzone": 0.5,
+"events": []
+}
+descarte={
+"deadzone": 0.5,
+"events": []
+}
 
 [input_devices]
 

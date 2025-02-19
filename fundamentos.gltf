@@ -1,0 +1,1 @@
+{"asset":{"generator":"Godot Engine v4.3.stable.steam@77dcf97d82cbfe4e4615475fa52ca03da645dbd8","version":"2.0"},"extensionsUsed":["GODOT_single_root"],"nodes":[{"children":[1],"name":"Fundamentos"},{"children":[2,4,5],"name":"CanvasLayer"},{"children":[3],"name":"ScrollFun"},{"name":"ListFun"},{"name":"TouchScrollFun"},{"name":"TextFun"}],"scene":0,"scenes":[{"nodes":[0]}]}

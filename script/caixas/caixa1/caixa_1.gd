@@ -6,29 +6,66 @@ extends MeshInstance3D
 
 @export_category("Butões")
 @export var drop_caixas: Button #So define na main
+@export var panelInfo: Panel #So define na main
 
 #o proprio nó
-@onready var caixas_1: MeshInstance3D = $"."
+@onready var caixa_1: MeshInstance3D = $"."
 
-var cont:int = 0
+var contVisiblePainel:int
+
+var descricaoCaixa1:String
+var nomeCaixa1:String
+var texturaCaixa1:String
 
 func _ready() -> void:
-	#print(Global.caixasValores)
-	for i in range(Global.caixasValores.size()):
-		var cena = Global.caixasValores[i]
-		
-		if cont == 0:
-			cont += 1
-			print("1")
+	var dados = carregar_json("res://script/pythonCaixas.json")
+	if dados.has(str(Global.fundamentos)):  
+		var keyss = dados[str(Global.fundamentos)]
+		for id in keyss.keys():
+			var jsonCaixas = keyss[id]
+
+			# Verifica se as chaves existem antes de acessá-las
+			if jsonCaixas.has("textura1") and jsonCaixas.has("nome1") and jsonCaixas.has("descricao1"):
+				adicionarVariavel(jsonCaixas["textura1"], jsonCaixas["nome1"], jsonCaixas["descricao1"])
+
+		# Carrega a textura apenas se a variável não estiver vazia
+		if texturaCaixa1 != "":
+			var textura = load(texturaCaixa1)
+			if textura:
+				var material = StandardMaterial3D.new()
+				material.albedo_texture = textura
+				caixa_1.material_override = material
+
+	
+func adicionarVariavel(textura1: String, nome: String, descricao: String):
+	texturaCaixa1 = textura1
+	nomeCaixa1 = nome
+	descricaoCaixa1 = descricao
+
+func carregar_json(caminho: String) -> Dictionary:
+	var file = FileAccess.open(caminho, FileAccess.READ)
+	if file:
+		var conteudo = file.get_as_text()
+		return JSON.parse_string(conteudo)
+	return {}
 
 func _process(_delta: float) -> void:
+	
 	if drop_caixas.button_pressed:
 		drop_object()
+	if Input.is_action_just_released("informacao"):
+		contVisiblePainel += 1
+		if contVisiblePainel == 1:
+			panelInfo.visible = true
+		if contVisiblePainel > 1:
+			panelInfo.text = " "
+			panelInfo.visible = false
+			contVisiblePainel = 0
 
 func _transfer_object(): #transfere o proprio objeto caixas_1 para a mão do player
-	caixas_1.reparent(SlotPlayer)
-	caixas_1.position = Vector3.ZERO
-	caixas_1.rotation = Vector3.ZERO
+	caixa_1.reparent(SlotPlayer)
+	caixa_1.position = Vector3.ZERO
+	caixa_1.rotation = Vector3.ZERO
 
 func drop_object():
 	var caixa = SlotPlayer.get_child(0) if SlotPlayer.get_child_count() > 0 else null

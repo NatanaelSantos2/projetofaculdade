@@ -3,7 +3,7 @@ extends ItemList
 @onready var list_var: ItemList = $"."
 
 var item_ids = {}
-var indexx = str(Global.contCaixa)
+var indexx = str(Global.fundamentos)
 func _ready() -> void:
 	var dados = carregar_json("res://script/PythonGeral.json")
 	if dados:

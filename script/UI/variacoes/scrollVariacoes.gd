@@ -31,6 +31,6 @@ func _on_touch_scroll_var_released() -> void:
 	validacaoToque = false
 
 func _on_list_var_item_activated(index: int) -> void:
-	Global.contCaixa = str(index)
+	Global.variacoes = index
 	Global.caixasValores.append(index)
 	get_tree().change_scene_to_file(mainScene)
