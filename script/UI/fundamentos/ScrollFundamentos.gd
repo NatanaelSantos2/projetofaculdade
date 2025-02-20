@@ -32,5 +32,6 @@ func _on_touch_scroll_fun_released() -> void:
 
 func _on_list_fun_item_activated(index: int) -> void:
 	Global.fundamentos = index
-	Global.caixasValores.append(index)
+	print("Fudamentos ",index)
+
 	get_tree().change_scene_to_file(variacoesScene)

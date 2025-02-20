@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://di2xuo80uxrij" path="res://icon.svg" id="3_2e8bc"]
 [ext_resource type="Script" path="res://script/areaAdicionar.gd" id="5_ls26k"]
 [ext_resource type="Script" path="res://script/area_caixas.gd" id="5_t3hmd"]
-[ext_resource type="PackedScene" uid="uid://dfcvv87lu1drp" path="res://scenes/objects/caixas/caixas_1.tscn" id="5_uev5i"]
+[ext_resource type="Script" path="res://script/caixas/caixa1/nodeCaixa_1.gd" id="6_6dg71"]
 [ext_resource type="PackedScene" uid="uid://qg5auvxr5pt0" path="res://scenes/objects/caixas/caixa_2.tscn" id="6_rvsuo"]
 [ext_resource type="PackedScene" uid="uid://s81rie3pjfkb" path="res://scenes/objects/caixas/caixa_3.tscn" id="7_omsnu"]
 [ext_resource type="PackedScene" uid="uid://dvyvej74ss17a" path="res://scenes/objects/caixas/caixa_4.tscn" id="8_lf82e"]
@@ -190,55 +190,63 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -331.0
-offset_top = -131.0
-offset_right = 331.0
-offset_bottom = 131.0
+offset_left = -470.0
+offset_top = -156.0
+offset_right = 453.0
+offset_bottom = 106.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ptab4")
 
 [node name="TextEdit" type="TextEdit" parent="areaCaixas/Panel"]
 layout_mode = 0
-offset_left = 18.0
-offset_top = 46.0
-offset_right = 632.0
-offset_bottom = 230.0
+offset_left = -5.0
+offset_top = 14.0
+offset_right = 924.0
+offset_bottom = 242.0
 editable = false
 virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
 
-[node name="caixa1" type="Node3D" parent="areaCaixas"]
+[node name="Nodecaixa1" type="Node3D" parent="areaCaixas"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.37127, 0, 0)
-
-[node name="caixa1" parent="areaCaixas/caixa1" node_paths=PackedStringArray("SlotPlayer", "drop_caixas", "panelInfo") instance=ExtResource("5_uev5i")]
-SlotPlayer = NodePath("../../../player/CollisionPlayer/SlotPlayer")
-drop_caixas = NodePath("../../../Control/CanvasLayer/Botoes/dropCaixas")
-panelInfo = NodePath("../../Panel")
+script = ExtResource("6_6dg71")
 
 [node name="caixa2" type="Node3D" parent="areaCaixas"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.86531, 0, 0)
 
-[node name="caixa2" parent="areaCaixas/caixa2" instance=ExtResource("6_rvsuo")]
-script = null
+[node name="caixa2" parent="areaCaixas/caixa2" node_paths=PackedStringArray("SlotPlayer", "drop_caixas", "panelInfo", "descText") instance=ExtResource("6_rvsuo")]
+SlotPlayer = NodePath("../../../player/CollisionPlayer/SlotPlayer")
+drop_caixas = NodePath("../../../Control/CanvasLayer/Botoes/dropCaixas")
+panelInfo = NodePath("../../Panel")
+descText = NodePath("../../Panel/TextEdit")
 
 [node name="caixa3" type="Node3D" parent="areaCaixas"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.389153, 0, 0)
 
-[node name="caixa3" parent="areaCaixas/caixa3" instance=ExtResource("7_omsnu")]
-script = null
+[node name="caixa3" parent="areaCaixas/caixa3" node_paths=PackedStringArray("SlotPlayer", "drop_caixas", "panelInfo", "descText") instance=ExtResource("7_omsnu")]
+SlotPlayer = NodePath("../../../player/CollisionPlayer/SlotPlayer")
+drop_caixas = NodePath("../../../Control/CanvasLayer/Botoes/dropCaixas")
+panelInfo = NodePath("../../Panel")
+descText = NodePath("../../Panel/TextEdit")
 
 [node name="caixa4" type="Node3D" parent="areaCaixas"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.10027, 0, 0)
 
-[node name="caixa4" parent="areaCaixas/caixa4" instance=ExtResource("8_lf82e")]
-script = null
+[node name="caixa4" parent="areaCaixas/caixa4" node_paths=PackedStringArray("SlotPlayer", "drop_caixas", "panelInfo", "descText") instance=ExtResource("8_lf82e")]
+SlotPlayer = NodePath("../../../player/CollisionPlayer/SlotPlayer")
+drop_caixas = NodePath("../../../Control/CanvasLayer/Botoes/dropCaixas")
+panelInfo = NodePath("../../Panel")
+descText = NodePath("../../Panel/TextEdit")
 
 [node name="caixa5" type="Node3D" parent="areaCaixas"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.57009, 0, 0)
 
-[node name="caixa5" parent="areaCaixas/caixa5" instance=ExtResource("9_68urk")]
-script = null
+[node name="caixa5" parent="areaCaixas/caixa5" node_paths=PackedStringArray("SlotPlayer", "drop_caixas", "panelInfo", "descText") instance=ExtResource("9_68urk")]
+SlotPlayer = NodePath("../../../player/CollisionPlayer/SlotPlayer")
+drop_caixas = NodePath("../../../Control/CanvasLayer/Botoes/dropCaixas")
+panelInfo = NodePath("../../Panel")
+descText = NodePath("../../Panel/TextEdit")
 
 [connection signal="area_entered" from="areaAdicionar" to="areaAdicionar" method="_on_area_entered"]
 [connection signal="area_exited" from="areaAdicionar" to="areaAdicionar" method="_on_area_exited"]

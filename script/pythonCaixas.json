@@ -3,16 +3,19 @@
 		"0": {
 			"nome1": "print",
 			"descricao1": "'print' é uma função embutida do Python usada para exibir mensagens na saída padrão.", 
+			"nomecaixa1": ")",
+			"descricaocaixa1": "O parêntese de fechamento ')' encerra a passagem de argumentos em funções no Python.",
+		
 			
 			"nome2": "(",
 			"descricao2": "O parêntese de abertura '(' é usado para iniciar a passagem de argumentos em funções no Python.",
-			"nome2": ")",
-			"descricao2": "O parêntese de fechamento ')' encerra a passagem de argumentos em funções no Python.",
+			"nomecaixa2": ")",
+			"descricaocaixa2": "O parêntese de fechamento ')' encerra a passagem de argumentos em funções no Python.",
 		
 			"nome3": "'",
 			"descricao3": "As aspas simples (') podem ser usadas para definir strings no Python.",
-			"nome3": "'",
-			"descricao3": "As aspas simples (') podem ser usadas para definir strings no Python.",
+			"nomecaixa3": "'",
+			"descricaocaixa3": "As aspas simples (') podem ser usadas para definir strings no Python.",
 			
 			"nome4": "Olá, mundo!",
 			"descricao4": "Uma string comum usada como exemplo em programas iniciais de diversas linguagens.",
@@ -20,41 +23,74 @@
 			"nome5": "vazio",
 			
 			"textura1": "res://icon.svg",
-			"textura2": "res://assets/2D/UI/fundamentos/dicionario.png",
+			"textura2": "res://icon.svg",
 			"textura3": "res://icon.svg",
 			"textura4": "res://icon.svg",
 			"textura5": "res://icon.svg",
 			"exemplo": "print(Olá, mundo!)"
 		},
 		"1": {
-			"nome": "print com variáveis",
-			"textura": "res://icon.svg",
-			"descricao": "Podemos imprimir variáveis concatenando valores com vírgula.",
-			"exemplo": "nome = 'Natanael'\nprint('Meu nome é', nome)"
+			"nome1": "print('",
+			"descricao1": "Podemos imprimir variáveis concatenando valores com vírgula.",
+			
+			"nome2": "Meu nome é",
+			"descricao2": "",
+			
+			"nome3": "'",
+			"descricao3": "",
+			
+			"nome4": ",",
+			"descricao4": "",
+			
+			"nome5": "')",
+			"descricao5": "",
+
+			"textura1": "res://assets/2D/UI/fundamentos/LacoRepetwhile.png",
+			"textura2": "res://assets/2D/UI/fundamentos/dicionario.png",
+			"textura3": "res://assets/2D/UI/fundamentos/dicionario.png",
+			"textura4": "res://assets/2D/UI/fundamentos/dicionario.png",
+			"textura5": "res://assets/2D/UI/fundamentos/dicionario.png",
+			"exemplo": "nome = 'Natanael'\nprint('Meu nome é', nome)",
 		},
 		"2": {
-			"nome": "print com f-string",
-			"textura": "res://icon.svg",
-			"descricao": "Usamos f-strings para formatar a saída de maneira intuitiva.",
+			"nome1": "print com f-string",
+			"descricao1": "Usamos f-strings para formatar a saída de maneira intuitiva.",
+			
+			"textura1": "res://assets/2D/UI/fundamentos/dicionario.png",
+			"textura2": "res://assets/2D/UI/fundamentos/dicionario.png",
+			"textura3": "res://assets/2D/UI/fundamentos/dicionario.png",
+			"textura4": "res://assets/2D/UI/fundamentos/dicionario.png",
+			"textura5": "res://assets/2D/UI/fundamentos/dicionario.png",
 			"exemplo": "nome = 'Natanael'\nidade = 25\nprint(f'Meu nome é {nome} e eu tenho {idade} anos.')"
 		},
 		"3": {
-			"nome": "print com múltiplas linhas",
-			"textura": "res://icon.svg",
-			"descricao": "Podemos usar três aspas para imprimir múltiplas linhas de texto.",
+			"nome1": "print com múltiplas linhas",
+			"descricao1": "Podemos usar três aspas para imprimir múltiplas linhas de texto.",
+			
+			"textura1": "res://assets/2D/UI/fundamentos/dicionario.png",
+			"textura2": "res://assets/2D/UI/fundamentos/dicionario.png",
+			"textura3": "res://assets/2D/UI/fundamentos/dicionario.png",
+			"textura4": "res://assets/2D/UI/fundamentos/dicionario.png",
+			"textura5": "res://assets/2D/UI/fundamentos/dicionario.png",
 			"exemplo": "print('''\nLinha 1\nLinha 2\nLinha 3\n''')"
 		},
 		"4": {
-			"nome": "print com caracteres especiais",
-			"textura": "res://icon.svg",
-			"descricao": "Podemos usar caracteres de escape para formatar a saída.",
+			"nome1": "print com caracteres especiais",
+			"descricao1": "Podemos usar caracteres de escape para formatar a saída.",
+			
+			"textura1": "res://assets/2D/UI/fundamentos/dicionario.png",
+			"textura2": "res://assets/2D/UI/fundamentos/dicionario.png",
+			"textura3": "res://assets/2D/UI/fundamentos/dicionario.png",
+			"textura4": "res://assets/2D/UI/fundamentos/dicionario.png",
+			"textura5": "res://assets/2D/UI/fundamentos/dicionario.png",
 			"exemplo": "print('Linha 1\nLinha 2\tTabulação')"
 		}
 	},
 	"1": {
 		"0": {
-			"nome": "Variáveis em Python",
-			"textura": "res://icon.svg",
+			"nome1": "Variáveis em Python",
+			"textura1": "res://icon.svg",
+			
 			"descricao": "Uma variável armazena um valor na memória e pode ser referenciada por um nome.",
 			"exemplo": "idade = 25\nprint(idade)"
 		},

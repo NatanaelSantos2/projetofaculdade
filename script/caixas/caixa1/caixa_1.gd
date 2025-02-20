@@ -1,64 +1,35 @@
 extends MeshInstance3D
 
-@export_category("SlotPlayer")
 #SlotPlayer serve para armazenar a caixa e tambem para verificar se tem um nó filho
-@export var SlotPlayer: Node3D #So define na main
-
-@export_category("Butões")
-@export var drop_caixas: Button #So define na main
-@export var panelInfo: Panel #So define na main
+@onready var SlotPlayer: Node3D = $"../../../player/CollisionPlayer/SlotPlayer"
+@onready var drop_caixas: Button = $"../../../Control/CanvasLayer/Botoes/dropCaixas"
+@onready var panelInfo: Panel = $"../../Panel"
+@onready var descText: TextEdit = $"../../Panel/TextEdit"
 
 #o proprio nó
 @onready var caixa_1: MeshInstance3D = $"."
 
 var contVisiblePainel:int
 
-var descricaoCaixa1:String
-var nomeCaixa1:String
-var texturaCaixa1:String
 
 func _ready() -> void:
-	var dados = carregar_json("res://script/pythonCaixas.json")
-	if dados.has(str(Global.fundamentos)):  
-		var keyss = dados[str(Global.fundamentos)]
-		for id in keyss.keys():
-			var jsonCaixas = keyss[id]
 
-			# Verifica se as chaves existem antes de acessá-las
-			if jsonCaixas.has("textura1") and jsonCaixas.has("nome1") and jsonCaixas.has("descricao1"):
-				adicionarVariavel(jsonCaixas["textura1"], jsonCaixas["nome1"], jsonCaixas["descricao1"])
-
-		# Carrega a textura apenas se a variável não estiver vazia
-		if texturaCaixa1 != "":
-			var textura = load(texturaCaixa1)
-			if textura:
-				var material = StandardMaterial3D.new()
-				material.albedo_texture = textura
-				caixa_1.material_override = material
-
-	
-func adicionarVariavel(textura1: String, nome: String, descricao: String):
-	texturaCaixa1 = textura1
-	nomeCaixa1 = nome
-	descricaoCaixa1 = descricao
-
-func carregar_json(caminho: String) -> Dictionary:
-	var file = FileAccess.open(caminho, FileAccess.READ)
-	if file:
-		var conteudo = file.get_as_text()
-		return JSON.parse_string(conteudo)
-	return {}
+	var textura = load(texturaCaixa1)
+	if textura:
+		var material = StandardMaterial3D.new()
+		material.albedo_texture = textura
+		caixa_1.material_override = material
 
 func _process(_delta: float) -> void:
-	
 	if drop_caixas.button_pressed:
 		drop_object()
 	if Input.is_action_just_released("informacao"):
 		contVisiblePainel += 1
 		if contVisiblePainel == 1:
+			descText.text = descricaoCaixa1
 			panelInfo.visible = true
 		if contVisiblePainel > 1:
-			panelInfo.text = " "
+			descText.text = " "
 			panelInfo.visible = false
 			contVisiblePainel = 0
 

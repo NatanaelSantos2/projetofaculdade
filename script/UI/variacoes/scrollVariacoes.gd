@@ -32,5 +32,5 @@ func _on_touch_scroll_var_released() -> void:
 
 func _on_list_var_item_activated(index: int) -> void:
 	Global.variacoes = index
-	Global.caixasValores.append(index)
+	print("Variacoes ",index)
 	get_tree().change_scene_to_file(mainScene)
