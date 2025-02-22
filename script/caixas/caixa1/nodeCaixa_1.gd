@@ -9,26 +9,26 @@ func _ready() -> void:
 	var dados = Global.carregar_json("res://script/pythonCaixas.json")
 	var keyss = dados[str(Global.fundamentos)][str(Global.variacoes)]
 
-	if keyss.has("textura1") and keyss.has("nome1") and keyss.has("descricao1"):
-		adicionarVariavel(keyss["textura1"], keyss["nome1"], keyss["descricao1"])
-		ops(keyss["descricaocaixa1"], keyss["nome1"])
+	if keyss.has("textura1") and keyss.has("descricao1"):
+		adicionarVariavel(keyss["textura1"], keyss["descricao1"])
+	if keyss.has("texturaAlternativo1") and keyss.has("descricaoAlternativo1"):
+		alternativas(keyss["texturaAlternativo1"], keyss["descricaoAlternativo1"])
 
-func adicionarVariavel(textura: String, nome: String, descricao: String):
+func adicionarVariavel(textura: String, descricao: String):
 	Global.texturaCaixa1.append(textura)
-	Global.nomeCaixa1.append(nome)
 	Global.descricaoCaixa1.append(descricao)
 	
-func ops(descricaocaixa1:String, nomecaixa1:String):
-	Global.texturaCaixa1.append(descricaocaixa1)
-	Global.nomeCaixa1.append(nomecaixa1)
+func alternativas(texturacaixaalt1:String, descricaocaixaalt1:String):
+	Global.texturaAlternativo1.append(texturacaixaalt1)
+	Global.descricaoAlternativo1.append(descricaocaixaalt1)
 
-func _process(delta: float) -> void:
-	if !has_child():
-		Global.validaCaixa2= true
-		var cena = load(cena_mesh)  # Carrega a cena do mesh
-		var instancia = cena.instantiate()  # Instancia o objeto
-		nodecaixa_1.add_child(instancia)  # Adiciona ao nó pai
-		Global.addIdClonado1 -= 1
+func _process(_delta: float) -> void:
+	#Para adicionar o objeto
+	if !has_child() and Global.texturaAlternativo1.size() > 0 or Global.texturaCaixa1.size() > 0: 
+		var cena = load(cena_mesh) 
+		var instancia = cena.instantiate()  
+		nodecaixa_1.add_child(instancia)  
 
-func has_child() -> bool: #Verifica se tem nó filho
+func has_child() -> bool:
+	#Verifica se tem nó filho
 	return nodecaixa_1.get_child_count() > 0

@@ -44,6 +44,14 @@ descarte={
 "deadzone": 0.5,
 "events": []
 }
+dropCaixas={
+"deadzone": 0.5,
+"events": []
+}
+FecharPainel={
+"deadzone": 0.5,
+"events": []
+}
 
 [input_devices]
 

@@ -1,15 +1,14 @@
-[gd_scene load_steps=34 format=3 uid="uid://b0nmucgpfoa4g"]
+[gd_scene load_steps=30 format=3 uid="uid://b0nmucgpfoa4g"]
 
 [ext_resource type="PackedScene" uid="uid://fxwwn1jq581p" path="res://scenes/UI/TelaPrincipal.tscn" id="1_kec7e"]
 [ext_resource type="PackedScene" uid="uid://blmhgkkujxiu0" path="res://scenes/characters/player.tscn" id="2_1i48k"]
 [ext_resource type="Texture2D" uid="uid://di2xuo80uxrij" path="res://icon.svg" id="3_2e8bc"]
-[ext_resource type="Script" path="res://script/areaAdicionar.gd" id="5_ls26k"]
-[ext_resource type="Script" path="res://script/area_caixas.gd" id="5_t3hmd"]
 [ext_resource type="Script" path="res://script/caixas/caixa1/nodeCaixa_1.gd" id="6_6dg71"]
 [ext_resource type="PackedScene" uid="uid://qg5auvxr5pt0" path="res://scenes/objects/caixas/caixa_2.tscn" id="6_rvsuo"]
 [ext_resource type="PackedScene" uid="uid://s81rie3pjfkb" path="res://scenes/objects/caixas/caixa_3.tscn" id="7_omsnu"]
 [ext_resource type="PackedScene" uid="uid://dvyvej74ss17a" path="res://scenes/objects/caixas/caixa_4.tscn" id="8_lf82e"]
 [ext_resource type="PackedScene" uid="uid://be2h0jnqyu87j" path="res://scenes/objects/caixas/caixa_5.tscn" id="9_68urk"]
+[ext_resource type="Script" path="res://script/area_ativabtn.gd" id="9_wgt53"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sbs7r"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -68,18 +67,10 @@ albedo_texture = ExtResource("3_2e8bc")
 [sub_resource type="PlaneMesh" id="PlaneMesh_e0oii"]
 size = Vector2(250, 150)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_27uso"]
-radius = 0.344263
+[sub_resource type="BoxShape3D" id="BoxShape3D_mivyg"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8phat"]
-albedo_texture = ExtResource("3_2e8bc")
-
-[sub_resource type="BoxMesh" id="BoxMesh_pt5ei"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_6kfn4"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptab4"]
-bg_color = Color(0.341176, 0.380392, 0.454902, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_sgssc"]
+size = Vector3(7.60132, 1, 1)
 
 [node name="main" type="Node3D"]
 
@@ -161,52 +152,8 @@ joystick = NodePath("../Control/CanvasLayer/joystick")
 
 [node name="Control" parent="." instance=ExtResource("1_kec7e")]
 
-[node name="areaAdicionar" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.39038, 0.738479, -6.61052)
-script = ExtResource("5_ls26k")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="areaAdicionar"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0338664, 0.652275, -0.0744839)
-shape = SubResource("SphereShape3D_27uso")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="areaAdicionar"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.304387, 0)
-material_override = SubResource("StandardMaterial3D_8phat")
-mesh = SubResource("BoxMesh_pt5ei")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="areaAdicionar/MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="areaAdicionar/MeshInstance3D/StaticBody3D"]
-shape = SubResource("BoxShape3D_6kfn4")
-
 [node name="areaCaixas" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12519, 3.16277)
-script = ExtResource("5_t3hmd")
-
-[node name="Panel" type="Panel" parent="areaCaixas"]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -470.0
-offset_top = -156.0
-offset_right = 453.0
-offset_bottom = 106.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ptab4")
-
-[node name="TextEdit" type="TextEdit" parent="areaCaixas/Panel"]
-layout_mode = 0
-offset_left = -5.0
-offset_top = 14.0
-offset_right = 924.0
-offset_bottom = 242.0
-editable = false
-virtual_keyboard_enabled = false
-middle_mouse_paste_enabled = false
 
 [node name="Nodecaixa1" type="Node3D" parent="areaCaixas"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.37127, 0, 0)
@@ -215,41 +162,42 @@ script = ExtResource("6_6dg71")
 [node name="caixa2" type="Node3D" parent="areaCaixas"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.86531, 0, 0)
 
-[node name="caixa2" parent="areaCaixas/caixa2" node_paths=PackedStringArray("SlotPlayer", "drop_caixas", "panelInfo", "descText") instance=ExtResource("6_rvsuo")]
-SlotPlayer = NodePath("../../../player/CollisionPlayer/SlotPlayer")
-drop_caixas = NodePath("../../../Control/CanvasLayer/Botoes/dropCaixas")
-panelInfo = NodePath("../../Panel")
-descText = NodePath("../../Panel/TextEdit")
+[node name="caixa2" parent="areaCaixas/caixa2" instance=ExtResource("6_rvsuo")]
 
 [node name="caixa3" type="Node3D" parent="areaCaixas"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.389153, 0, 0)
 
-[node name="caixa3" parent="areaCaixas/caixa3" node_paths=PackedStringArray("SlotPlayer", "drop_caixas", "panelInfo", "descText") instance=ExtResource("7_omsnu")]
-SlotPlayer = NodePath("../../../player/CollisionPlayer/SlotPlayer")
-drop_caixas = NodePath("../../../Control/CanvasLayer/Botoes/dropCaixas")
-panelInfo = NodePath("../../Panel")
-descText = NodePath("../../Panel/TextEdit")
+[node name="caixa3" parent="areaCaixas/caixa3" instance=ExtResource("7_omsnu")]
 
 [node name="caixa4" type="Node3D" parent="areaCaixas"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.10027, 0, 0)
 
-[node name="caixa4" parent="areaCaixas/caixa4" node_paths=PackedStringArray("SlotPlayer", "drop_caixas", "panelInfo", "descText") instance=ExtResource("8_lf82e")]
-SlotPlayer = NodePath("../../../player/CollisionPlayer/SlotPlayer")
-drop_caixas = NodePath("../../../Control/CanvasLayer/Botoes/dropCaixas")
-panelInfo = NodePath("../../Panel")
-descText = NodePath("../../Panel/TextEdit")
+[node name="caixa4" parent="areaCaixas/caixa4" instance=ExtResource("8_lf82e")]
 
 [node name="caixa5" type="Node3D" parent="areaCaixas"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.57009, 0, 0)
 
-[node name="caixa5" parent="areaCaixas/caixa5" node_paths=PackedStringArray("SlotPlayer", "drop_caixas", "panelInfo", "descText") instance=ExtResource("9_68urk")]
-SlotPlayer = NodePath("../../../player/CollisionPlayer/SlotPlayer")
-drop_caixas = NodePath("../../../Control/CanvasLayer/Botoes/dropCaixas")
-panelInfo = NodePath("../../Panel")
-descText = NodePath("../../Panel/TextEdit")
+[node name="caixa5" parent="areaCaixas/caixa5" instance=ExtResource("9_68urk")]
 
-[connection signal="area_entered" from="areaAdicionar" to="areaAdicionar" method="_on_area_entered"]
-[connection signal="area_exited" from="areaAdicionar" to="areaAdicionar" method="_on_area_exited"]
+[node name="AreaAtivaBtn" type="Node3D" parent="."]
+script = ExtResource("9_wgt53")
+
+[node name="AreaExcluir" type="Area3D" parent="AreaAtivaBtn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.44861, 1.32602, -6.43783)
+
+[node name="Collision" type="CollisionShape3D" parent="AreaAtivaBtn/AreaExcluir"]
+shape = SubResource("BoxShape3D_mivyg")
+
+[node name="AreaDrop" type="Area3D" parent="AreaAtivaBtn"]
+
+[node name="Collision" type="CollisionShape3D" parent="AreaAtivaBtn/AreaDrop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.392944, 1.05451, 3.15954)
+shape = SubResource("BoxShape3D_sgssc")
+
+[connection signal="body_entered" from="AreaAtivaBtn/AreaExcluir" to="AreaAtivaBtn" method="_on_area_excluir_body_entered"]
+[connection signal="body_exited" from="AreaAtivaBtn/AreaExcluir" to="AreaAtivaBtn" method="_on_area_excluir_body_exited"]
+[connection signal="body_entered" from="AreaAtivaBtn/AreaDrop" to="AreaAtivaBtn" method="_on_area_drop_body_entered"]
+[connection signal="body_exited" from="AreaAtivaBtn/AreaDrop" to="AreaAtivaBtn" method="_on_area_drop_body_exited"]
 
 [editable path="player"]
 [editable path="Control"]

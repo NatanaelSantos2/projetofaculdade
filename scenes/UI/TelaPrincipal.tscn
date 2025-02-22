@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://fxwwn1jq581p"]
+[gd_scene load_steps=12 format=3 uid="uid://fxwwn1jq581p"]
 
 [ext_resource type="Script" path="res://script/UI/joystick.gd" id="1_jm4uk"]
 [ext_resource type="Texture2D" uid="uid://c0nyew7102nc5" path="res://assets/2D/UI/joystick/SmalHandle.png" id="1_ud783"]
@@ -12,11 +12,17 @@ radius = 60.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbjeq"]
 size = Vector2(100, 100)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4uja1"]
+size = Vector2(100, 100)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_chnyu"]
 size = Vector2(100, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rim3l"]
 size = Vector2(100, 100)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k8fs1"]
+radius = 60.0
 
 [node name="TelaPrincipal" type="Control"]
 layout_mode = 3
@@ -49,13 +55,12 @@ shape = SubResource("RectangleShape2D_cbjeq")
 action = "voltarVar"
 script = ExtResource("5_jeu4w")
 
-[node name="dropCaixas" type="Button" parent="CanvasLayer/Botoes"]
-offset_left = 871.0
-offset_top = 427.0
-offset_right = 1007.0
-offset_bottom = 563.0
-disabled = true
-icon = ExtResource("4_agu6q")
+[node name="dropCaixas" type="TouchScreenButton" parent="CanvasLayer/Botoes"]
+visible = false
+position = Vector2(901, 396)
+texture_normal = ExtResource("4_agu6q")
+shape = SubResource("RectangleShape2D_4uja1")
+action = "dropCaixas"
 
 [node name="Informacao" type="TouchScreenButton" parent="CanvasLayer/Botoes"]
 position = Vector2(1013, 189)
@@ -71,9 +76,40 @@ texture_normal = ExtResource("4_agu6q")
 shape = SubResource("RectangleShape2D_rim3l")
 action = "descarte"
 
-[node name="avisos" type="Node" parent="CanvasLayer"]
+[node name="Avisos" type="Node" parent="CanvasLayer"]
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/avisos"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Avisos"]
 position = Vector2(581, 81)
 scale = Vector2(4.79688, 1)
 texture = ExtResource("4_agu6q")
+
+[node name="Painel" type="Node" parent="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Painel"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -483.5
+offset_top = -158.0
+offset_right = 483.5
+offset_bottom = 158.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextDescricao" type="Label" parent="CanvasLayer/Painel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FecharPainel" type="TouchScreenButton" parent="CanvasLayer/Painel/Panel"]
+position = Vector2(919.5, -26)
+scale = Vector2(0.539063, 0.570313)
+texture_normal = ExtResource("4_agu6q")
+shape = SubResource("CircleShape2D_k8fs1")
+action = "FecharPainel"

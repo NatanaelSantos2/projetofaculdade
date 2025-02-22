@@ -1,32 +1,29 @@
 {
 	"0": {
 		"0": {
-			"nome1": "print",
+			"": "print",
+			"textura1": "res://icon.svg",
 			"descricao1": "'print' é uma função embutida do Python usada para exibir mensagens na saída padrão.", 
-			"nomecaixa1": ")",
-			"descricaocaixa1": "O parêntese de fechamento ')' encerra a passagem de argumentos em funções no Python.",
-		
 			
-			"nome2": "(",
+			"": "(",
+			"textura2": "res://icon.svg",
 			"descricao2": "O parêntese de abertura '(' é usado para iniciar a passagem de argumentos em funções no Python.",
-			"nomecaixa2": ")",
-			"descricaocaixa2": "O parêntese de fechamento ')' encerra a passagem de argumentos em funções no Python.",
-		
-			"nome3": "'",
-			"descricao3": "As aspas simples (') podem ser usadas para definir strings no Python.",
-			"nomecaixa3": "'",
-			"descricaocaixa3": "As aspas simples (') podem ser usadas para definir strings no Python.",
+			"textureAlternativo2": ")",
+			"descricaoAlternativo2": "O parêntese de fechamento ')' encerra a passagem de argumentos em funções no Python.",
 			
-			"nome4": "Olá, mundo!",
+			"": "'",
+			"textura3": "res://icon.svg",
+			"descricao3": "As aspas simples (') podem ser usadas para definir strings no Python.",
+			"textureAlternativo3": "'",
+			"descricaoAlternativo2": "As aspas simples (') podem ser usadas para definir strings no Python.",
+			
+			"": "Olá, mundo!",
+			"textura4": "res://icon.svg",
 			"descricao4": "Uma string comum usada como exemplo em programas iniciais de diversas linguagens.",
 			
 			"nome5": "vazio",
+			"textura5": "",
 			
-			"textura1": "res://icon.svg",
-			"textura2": "res://icon.svg",
-			"textura3": "res://icon.svg",
-			"textura4": "res://icon.svg",
-			"textura5": "res://icon.svg",
 			"exemplo": "print(Olá, mundo!)"
 		},
 		"1": {

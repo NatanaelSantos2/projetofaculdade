@@ -1,13 +1,9 @@
 extends MeshInstance3D
 
-@export_category("SlotPlayer")
 #SlotPlayer serve para armazenar a caixa e tambem para verificar se tem um nó filho
-@export var SlotPlayer: Node3D #So define na main
-
-@export_category("Butões")
-@export var drop_caixas: Button #So define na main
-@export var panelInfo: Panel #So define na main
-@export var descText: TextEdit #So define na main
+@onready var SlotPlayer: Node3D = $"../../../player/CollisionPlayer/SlotPlayer"
+@onready var panelInfo: Panel = $"../../../Control/CanvasLayer/Painel/Panel" #Definido na main Control
+@onready var descText: Label = $"../../../Control/CanvasLayer/Painel/Panel/TextDescricao" #Definido na main Control
 
 #o proprio nó
 @onready var caixa_4: MeshInstance3D = $"."
@@ -16,23 +12,23 @@ var contVisiblePainel:int
 
 var descricaoCaixa1:String
 var nomeCaixa1:String
-var texturaCaixa1:String
+var texturaCaixa4:String
 
 func _ready() -> void:
 	var dados = carregar_json("res://script/pythonCaixas.json")
 	var keyss = dados[str(Global.fundamentos)][str(Global.variacoes)]
 
-	if keyss.has("textura1") and keyss.has("nome1") and keyss.has("descricao1"):
-		adicionarVariavel(keyss["textura1"], keyss["nome1"], keyss["descricao1"])
+	if keyss.has("textura4") and keyss.has("nome1") and keyss.has("descricao1"):
+		adicionarVariavel(keyss["textura4"], keyss["nome1"], keyss["descricao1"])
 
-	var textura = load(texturaCaixa1)
+	var textura = load(texturaCaixa4)
 	if textura:
 		var material = StandardMaterial3D.new()
 		material.albedo_texture = textura
 		caixa_4.material_override = material
 
-func adicionarVariavel(textura1: String, nome: String, descricao: String):
-	texturaCaixa1 = textura1
+func adicionarVariavel(textura4: String, nome: String, descricao: String):
+	texturaCaixa4 = textura4
 	nomeCaixa1 = nome
 	descricaoCaixa1 = descricao
 
@@ -43,19 +39,18 @@ func carregar_json(caminho: String) -> Dictionary:
 		return JSON.parse_string(conteudo)
 	return {}
 
-func _process(_delta: float) -> void:
-	
-	if drop_caixas.button_pressed:
-		drop_object()
-	if Input.is_action_just_released("informacao"):
-		contVisiblePainel += 1
-		if contVisiblePainel == 1:
-			descText.text = descricaoCaixa1
-			panelInfo.visible = true
-		if contVisiblePainel > 1:
-			descText.text = " "
-			panelInfo.visible = false
-			contVisiblePainel = 0
+#func _process(_delta: float) -> void:
+	#if Input.is_action_just_pressed("dropCaixas"):
+		#drop_object()
+	#if Input.is_action_just_released("informacao"):
+		#contVisiblePainel += 1
+		#if contVisiblePainel == 1:
+			#descText.text = descricaoCaixa1
+			#panelInfo.visible = true
+		#if contVisiblePainel > 1:
+			#descText.text = " "
+			#panelInfo.visible = false
+			#contVisiblePainel = 0
 
 func _transfer_object(): #transfere o proprio objeto caixas_1 para a mão do player
 	caixa_4.reparent(SlotPlayer)

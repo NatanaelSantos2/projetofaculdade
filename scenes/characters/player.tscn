@@ -1,12 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://blmhgkkujxiu0"]
+[gd_scene load_steps=4 format=3 uid="uid://blmhgkkujxiu0"]
 
 [ext_resource type="Script" path="res://script/player/player.gd" id="1_us2vt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_02rl7"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_fr6lq"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_lhee1"]
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_us2vt")
@@ -20,8 +18,3 @@ skeleton = NodePath("../..")
 
 [node name="SlotPlayer" type="Node3D" parent="CollisionPlayer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0442169, 0.504856, 1)
-
-[node name="AreaPlayer" type="Area3D" parent="."]
-
-[node name="CollisionAreaPlayer" type="CollisionShape3D" parent="AreaPlayer"]
-shape = SubResource("SphereShape3D_lhee1")
