@@ -5,6 +5,7 @@ extends MeshInstance3D
 @onready var panelInfo: Panel = $"../../../Control/CanvasLayer/Painel/Panel" #Definido na main Control
 @onready var descText: Label = $"../../../Control/CanvasLayer/Painel/Panel/TextDescricao" #Definido na main Control
 @onready var nodecaixa_1: Node3D = $"../../../areaCaixas/Nodecaixa1" #Definido na main para dropa a caixa na area certa
+@onready var text_resultado: Label = $"../../../Control/CanvasLayer/Avisos/Panel/TextResultado"
 
 #o proprio nó
 @onready var caixa_1: MeshInstance3D = $"."
@@ -28,9 +29,9 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	#exclui objeto do jogo 
-	if Input.is_action_just_pressed("dropCaixas") and Global.excluirCaixa == true:
+	if Input.is_action_just_released("dropCaixas") and Global.excluirCaixa == true:
 		exclui_caixa()
-		print("teste")
+
 	#Drop de objetos no areacaixa no Nodecaixa1
 	if Input.is_action_just_pressed("dropCaixas") and Global.dropCaixa == true:
 		drop_object()
@@ -54,6 +55,13 @@ func drop_object():
 
 func exclui_caixa():
 	var caixa = SlotPlayer.get_child(0) if SlotPlayer.get_child_count() > 0 else null
+		
+	print(text_resultado.text)
+	
+	if Global.PainelResultado.size() > 0:
+		text_resultado.text += Global.PainelResultado[0]
+		Global.PainelResultado.pop_front()
+
 	if caixa:
 		caixa.queue_free()
 

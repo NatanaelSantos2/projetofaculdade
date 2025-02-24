@@ -7,6 +7,9 @@ var variacoes:int #Variações manda o index e vai para as caxas
 var excluirCaixa: bool
 var dropCaixa: bool
 
+#É chamado na Caixa1 e no nodeCaixa1
+var PainelResultado = []
+
 #Area de armazenamento da caixa 1
 var descricaoCaixa1 = []
 var texturaCaixa1 = []

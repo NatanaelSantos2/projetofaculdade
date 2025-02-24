@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b0nmucgpfoa4g"]
+[gd_scene load_steps=18 format=3 uid="uid://b0nmucgpfoa4g"]
 
 [ext_resource type="PackedScene" uid="uid://fxwwn1jq581p" path="res://scenes/UI/TelaPrincipal.tscn" id="1_kec7e"]
 [ext_resource type="PackedScene" uid="uid://blmhgkkujxiu0" path="res://scenes/characters/player.tscn" id="2_1i48k"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dvyvej74ss17a" path="res://scenes/objects/caixas/caixa_4.tscn" id="8_lf82e"]
 [ext_resource type="PackedScene" uid="uid://be2h0jnqyu87j" path="res://scenes/objects/caixas/caixa_5.tscn" id="9_68urk"]
 [ext_resource type="Script" path="res://script/area_ativabtn.gd" id="9_wgt53"]
+[ext_resource type="PackedScene" uid="uid://b67jchncypkhb" path="res://assets/3D/personRobo.blend" id="10_iorrw"]
+[ext_resource type="PackedScene" uid="uid://bh2hl0s7s2gdu" path="res://assets/3D/terrenoCircuito.blend" id="11_wtdda"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sbs7r"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -22,129 +24,24 @@ background_mode = 2
 sky = SubResource("Sky_30met")
 tonemap_mode = 2
 
-[sub_resource type="BoxMesh" id="BoxMesh_rl8p4"]
-size = Vector3(10, 1, 20)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_oic74"]
-size = Vector3(10, 1, 20)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_swxgk"]
-albedo_texture = ExtResource("3_2e8bc")
-
-[sub_resource type="BoxMesh" id="BoxMesh_7a448"]
-size = Vector3(5, 1, 20)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_xpkub"]
-size = Vector3(2, 1, 20)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gu4gl"]
-albedo_texture = ExtResource("3_2e8bc")
-
-[sub_resource type="BoxMesh" id="BoxMesh_dy4jf"]
-size = Vector3(5, 1, 20)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_gaww6"]
-size = Vector3(2, 1, 20)
-
-[sub_resource type="BoxMesh" id="BoxMesh_1b338"]
-size = Vector3(2, 8, 10)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_w7ry6"]
-size = Vector3(2, 8, 10.322)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_omu5b"]
-albedo_texture = ExtResource("3_2e8bc")
-
-[sub_resource type="BoxMesh" id="BoxMesh_5sytf"]
-size = Vector3(2, 1, 10)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_78ee2"]
-size = Vector3(0.765137, 1, 10.3662)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1woij"]
-albedo_texture = ExtResource("3_2e8bc")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_e0oii"]
-size = Vector2(250, 150)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_mivyg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sgssc"]
 size = Vector3(7.60132, 1, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_igwrm"]
+albedo_texture = ExtResource("3_2e8bc")
+
 [node name="main" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
-shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0im6x")
 
-[node name="cenario" type="Node3D" parent="."]
-
-[node name="Camera" type="Camera3D" parent="cenario"]
-transform = Transform3D(1, 0, 0, 0, 0.952215, 0.305429, 0, -0.305429, 0.952215, 0, 4.53311, 7)
-
-[node name="terra" type="MeshInstance3D" parent="cenario"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.00903)
-mesh = SubResource("BoxMesh_rl8p4")
-skeleton = NodePath("../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="cenario/terra"]
-
-[node name="Collision" type="CollisionShape3D" parent="cenario/terra/StaticBody3D"]
-shape = SubResource("BoxShape3D_oic74")
-
-[node name="terra2" type="MeshInstance3D" parent="cenario"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 4.4806, 1.30419, -4.94934)
-material_override = SubResource("StandardMaterial3D_swxgk")
-mesh = SubResource("BoxMesh_7a448")
-skeleton = NodePath("../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="cenario/terra2"]
-
-[node name="Collision" type="CollisionShape3D" parent="cenario/terra2/StaticBody3D"]
-shape = SubResource("BoxShape3D_xpkub")
-
-[node name="terra3" type="MeshInstance3D" parent="cenario"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -4.933, 1.2467, -5.14504)
-material_override = SubResource("StandardMaterial3D_gu4gl")
-mesh = SubResource("BoxMesh_dy4jf")
-skeleton = NodePath("../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="cenario/terra3"]
-
-[node name="Collision" type="CollisionShape3D" parent="cenario/terra3/StaticBody3D"]
-shape = SubResource("BoxShape3D_gaww6")
-
-[node name="terra4" type="MeshInstance3D" parent="cenario"]
-transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, -0.266524, 0.994565, -11.1488)
-mesh = SubResource("BoxMesh_1b338")
-skeleton = NodePath("../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="cenario/terra4"]
-
-[node name="Collision" type="CollisionShape3D" parent="cenario/terra4/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0400385)
-shape = SubResource("BoxShape3D_w7ry6")
-
-[node name="terra5" type="MeshInstance3D" parent="cenario"]
-transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, -0.301929, -0.388192, 4.49386)
-material_override = SubResource("StandardMaterial3D_omu5b")
-mesh = SubResource("BoxMesh_5sytf")
-skeleton = NodePath("../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="cenario/terra5"]
-
-[node name="Collision" type="CollisionShape3D" parent="cenario/terra5/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.579128, 0, -0.10791)
-shape = SubResource("BoxShape3D_78ee2")
-
-[node name="plano" type="MeshInstance3D" parent="cenario"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.402893, -0.144371, 0)
-material_override = SubResource("StandardMaterial3D_1woij")
-mesh = SubResource("PlaneMesh_e0oii")
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.952215, 0.305429, 0, -0.305429, 0.952215, 0, 5.2907, 14.8686)
 
 [node name="player" parent="." node_paths=PackedStringArray("joystick") instance=ExtResource("2_1i48k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0863, 0)
@@ -153,7 +50,7 @@ joystick = NodePath("../Control/CanvasLayer/joystick")
 [node name="Control" parent="." instance=ExtResource("1_kec7e")]
 
 [node name="areaCaixas" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12519, 3.16277)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.804057, 11.1266)
 
 [node name="Nodecaixa1" type="Node3D" parent="areaCaixas"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.37127, 0, 0)
@@ -180,19 +77,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.57009, 0, 0)
 [node name="caixa5" parent="areaCaixas/caixa5" instance=ExtResource("9_68urk")]
 
 [node name="AreaAtivaBtn" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.50303, 0, 7.89162)
 script = ExtResource("9_wgt53")
 
 [node name="AreaExcluir" type="Area3D" parent="AreaAtivaBtn"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.44861, 1.32602, -6.43783)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.80754, 0.778419, -15.8425)
 
 [node name="Collision" type="CollisionShape3D" parent="AreaAtivaBtn/AreaExcluir"]
 shape = SubResource("BoxShape3D_mivyg")
 
 [node name="AreaDrop" type="Area3D" parent="AreaAtivaBtn"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0550135, 0.754429, 3.22782)
 
 [node name="Collision" type="CollisionShape3D" parent="AreaAtivaBtn/AreaDrop"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.392944, 1.05451, 3.15954)
 shape = SubResource("BoxShape3D_sgssc")
+
+[node name="personRobo" parent="." instance=ExtResource("10_iorrw")]
+transform = Transform3D(-1.63918e-08, 0, 0.375, 0, 0.375, 0, -0.375, 0, -1.63918e-08, 0, 3.99674, -11.7664)
+
+[node name="terrenoCircuito" parent="." instance=ExtResource("11_wtdda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23.7399)
+
+[node name="Cubo " parent="terrenoCircuito" index="1"]
+material_override = SubResource("StandardMaterial3D_igwrm")
 
 [connection signal="body_entered" from="AreaAtivaBtn/AreaExcluir" to="AreaAtivaBtn" method="_on_area_excluir_body_entered"]
 [connection signal="body_exited" from="AreaAtivaBtn/AreaExcluir" to="AreaAtivaBtn" method="_on_area_excluir_body_exited"]
@@ -201,3 +108,4 @@ shape = SubResource("BoxShape3D_sgssc")
 
 [editable path="player"]
 [editable path="Control"]
+[editable path="terrenoCircuito"]
